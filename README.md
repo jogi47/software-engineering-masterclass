@@ -6,7 +6,8 @@
 ![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Patterns](https://img.shields.io/badge/Patterns-112-purple?style=flat-square)
 ![Problems](https://img.shields.io/badge/Problems-88-orange?style=flat-square)
-![System Design](https://img.shields.io/badge/System%20Design-16-blue?style=flat-square)
+![System Design](https://img.shields.io/badge/System%20Design-21-blue?style=flat-square)
+![LLD Interview](https://img.shields.io/badge/LLD%20Interview-3-green?style=flat-square)
 
 ---
 
@@ -17,6 +18,9 @@
 | **Design Patterns** | 112 | Core GoF + PoEAA + DDD + Refactoring patterns |
 | **DSA Problems** | 88 | Data structures, algorithms, and LeetCode-style problems |
 | **System Design** | 16 | Real-world system architecture documents |
+| **System Design Interview** | 2 | Interview-focused system design problems |
+| **LLD Interview** | 3 | Low-level design interview problems |
+| **System Design Fundamentals** | 2 | Core concepts (SSL/TLS, RBAC) |
 | **DDIA Notes** | 12 | Designing Data-Intensive Applications book notes |
 | **TypeScript** | Strict | Full type safety with comprehensive documentation |
 
@@ -36,6 +40,9 @@
   - [Medium Problems](#medium-problems)
   - [Hard Problems](#hard-problems)
 - [System Design](#system-design)
+- [System Design Interview](#system-design-interview)
+- [Low-Level Design Interview](#low-level-design-interview)
+- [System Design Fundamentals](#system-design-fundamentals)
 - [Database & Distributed Systems](#database--distributed-systems)
   - [DDIA - Designing Data-Intensive Applications](#ddia---designing-data-intensive-applications)
 - [Getting Started](#getting-started)
@@ -73,6 +80,9 @@ dsa-playground/
 │   ├── medium/                  # 47 medium difficulty problems
 │   └── hard/                    # 11 hard difficulty problems
 ├── system-design/               # 16 system design documents
+├── system-design-interview/     # 2 system design interview problems
+├── low-level-design-interview/  # 3 LLD interview problems
+├── system-design-fundamental/   # 2 system design concepts
 ├── database/
 │   └── ddia/                    # 12 chapters of DDIA notes
 │       ├── foundations/
@@ -505,6 +515,40 @@ dsa-playground/
 
 ---
 
+## System Design Interview
+
+2 interview-focused system design problems with detailed solutions.
+
+| # | Problem | File | Focus Areas |
+|---|---------|------|-------------|
+| 01 | **Design Calendar System** | [01-design-calendar-system.md](system-design-interview/01-design-calendar-system.md) | Event scheduling, recurring events, timezone handling |
+| 02 | **Design Google Docs** | [02-design-google-docs.md](system-design-interview/02-design-google-docs.md) | Real-time collaboration, OT/CRDT, conflict resolution |
+
+---
+
+## Low-Level Design Interview
+
+3 low-level design interview problems with OOP implementations.
+
+| # | Problem | File | Key Concepts |
+|---|---------|------|--------------|
+| 01 | **Design Parking Lot** | [01-design-parking-lot.md](low-level-design-interview/01-design-parking-lot.md) | OOP, Strategy pattern, State management |
+| 02 | **Design Notification System** | [02-design-notification-system.md](low-level-design-interview/02-design-notification-system.md) | Observer pattern, Template method, Priority queues |
+| 03 | **Design Search Autocomplete** | [03-design-search-autocomplete.md](low-level-design-interview/03-design-search-autocomplete.md) | Trie, Caching, Ranking algorithms |
+
+---
+
+## System Design Fundamentals
+
+2 core system design concepts with detailed explanations.
+
+| # | Topic | File | Description |
+|---|-------|------|-------------|
+| 01 | **SSL/TLS Explained** | [01-ssltls_explained.md](system-design-fundamental/01-ssltls_explained.md) | TLS handshake, certificates, encryption |
+| 02 | **Role-Based Access Control (RBAC)** | [02-role_based_access_control_rbac.md](system-design-fundamental/02-role_based_access_control_rbac.md) | Roles, permissions, access control models |
+
+---
+
 ## Database & Distributed Systems
 
 ### DDIA - Designing Data-Intensive Applications
@@ -600,6 +644,14 @@ npx tsc --noEmit
 | PoEAA Patterns | 20 | Patterns of Enterprise Application Architecture |
 | DDD Patterns | 21 | Domain-Driven Design (Eric Evans) |
 | Refactoring Patterns | 61 | Refactoring (Martin Fowler, 2nd Ed) |
+
+### Interview Preparation
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| System Design Interview | 2 | Large-scale system design problems |
+| LLD Interview | 3 | Object-oriented design problems |
+| System Design Fundamentals | 2 | Core concepts (security, access control) |
 
 ---
 
