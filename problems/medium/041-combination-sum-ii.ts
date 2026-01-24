@@ -66,37 +66,32 @@ function combinationSum2(candidates: number[], target: number): number[][] {
   // Sort to enable duplicate skipping and early termination
   candidates.sort((a, b) => a - b);
 
-  function backtrack(index: number, remaining: number): void {
+  function dfs(index: number, remaining: number): void {
     // Found a valid combination
     if (remaining === 0) {
       result.push([...current]);
       return;
     }
 
-    for (let i = index; i < candidates.length; i++) {
-      const candidate = candidates[i];
-
-      // Early termination: remaining candidates are too large
-      if (candidate > remaining) {
-        break;
-      }
-
-      // Skip duplicates at the same recursion level
-      // i > index ensures we don't skip the first occurrence
-      if (i > index && candidates[i] === candidates[i - 1]) {
-        continue;
-      }
-
-      // Include this candidate
-      current.push(candidate);
-      // Move to next index (each element used only once)
-      backtrack(i + 1, remaining - candidate);
-      // Backtrack
-      current.pop();
+    // Base case: out of bounds or current candidate too large
+    if (index >= candidates.length || candidates[index] > remaining) {
+      return;
     }
+
+    // PICK: Include candidates[index]
+    current.push(candidates[index]);
+    dfs(index + 1, remaining - candidates[index]);
+    current.pop();
+
+    // SKIP: Don't include, AND skip all duplicates of this value
+    let next = index + 1;
+    while (next < candidates.length && candidates[next] === candidates[index]) {
+      next++;
+    }
+    dfs(next, remaining);
   }
 
-  backtrack(0, target);
+  dfs(0, target);
   return result;
 }
 

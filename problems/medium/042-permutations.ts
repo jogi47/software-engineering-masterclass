@@ -125,6 +125,46 @@ function permuteSwap(nums: number[]): number[][] {
   return result;
 }
 
+/**
+ * Alternative: Recursive insert approach
+ *
+ * Instead of backtracking, we build permutations by:
+ * 1. Recursively getting all permutations of remaining elements
+ * 2. Inserting the first element at every possible position
+ *
+ * Example for [1,2,3]:
+ * permuteInsert([1,2,3]):
+ *   permuteInsert([2,3]):
+ *     permuteInsert([3]):
+ *       permuteInsert([]) -> [[]]
+ *       insert 3 at pos 0 -> [[3]]
+ *     insert 2 at pos 0,1 -> [[2,3], [3,2]]
+ *   insert 1 at pos 0,1,2 for each:
+ *     [2,3] -> [1,2,3], [2,1,3], [2,3,1]
+ *     [3,2] -> [1,3,2], [3,1,2], [3,2,1]
+ */
+function permuteInsert(nums: number[]): number[][] {
+  // Base case: empty array has one permutation (empty)
+  if (nums.length === 0) {
+    return [[]];
+  }
+
+  // Get permutations of remaining elements (all except first)
+  const perms = permuteInsert(nums.slice(1));
+  const result: number[][] = [];
+
+  // Insert first element at every position in each permutation
+  for (const perm of perms) {
+    for (let i = 0; i <= perm.length; i++) {
+      const copy = [...perm];
+      copy.splice(i, 0, nums[0]);
+      result.push(copy);
+    }
+  }
+
+  return result;
+}
+
 // Test cases
 console.log("Using used array approach:");
 console.log(JSON.stringify(permute([1, 2, 3])));
@@ -141,6 +181,13 @@ console.log(JSON.stringify(permuteSwap([1, 2, 3])));
 // Expected: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,2,1],[3,1,2]]
 
 console.log(JSON.stringify(permuteSwap([0, 1])));
+// Expected: [[0,1],[1,0]]
+
+console.log("\nUsing recursive insert approach:");
+console.log(JSON.stringify(permuteInsert([1, 2, 3])));
+// Expected: [[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+
+console.log(JSON.stringify(permuteInsert([0, 1])));
 // Expected: [[0,1],[1,0]]
 
 export {};

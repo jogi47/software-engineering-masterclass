@@ -34,16 +34,16 @@
  */
 
 /**
- * Algorithm: Backtracking with Unlimited Reuse
+ * Algorithm: Backtracking with Pick/Skip Decision Tree
  *
- * Time Complexity: O(n^(t/m)) where t = target, m = minimum candidate
- *                  In worst case, we branch n ways at each level, depth = t/m
+ * Time Complexity: O(2^(t/m)) where t = target, m = minimum candidate
+ *                  Binary decision at each node, depth = t/m
  * Space Complexity: O(t/m) - Maximum recursion depth
  *
  * Key Insight:
- * Unlike regular subsets where we move to next index after choosing,
- * here we can stay at the same index to reuse the same element.
- * We only move forward when we decide NOT to include more of current element.
+ * At each step, we make a binary decision for the current candidate:
+ * 1. PICK: Include candidates[i], stay at same index (can reuse)
+ * 2. SKIP: Don't include, move to index i+1 (try next candidate)
  *
  * To avoid duplicates:
  * - We maintain an index and only consider candidates from index onwards
@@ -51,50 +51,52 @@
  *
  * Example trace for candidates = [2,3,6,7], target = 7:
  *
- * backtrack(0, [], 7):
- *   i=0, pick 2: backtrack(0, [2], 5)
- *     i=0, pick 2: backtrack(0, [2,2], 3)
- *       i=0, pick 2: backtrack(0, [2,2,2], 1)
- *         i=0, 2 > 1, skip
- *         i=1, 3 > 1, skip
- *         ...return
- *       i=1, pick 3: backtrack(1, [2,2,3], 0) -> FOUND! add [2,2,3]
- *       ...
- *   i=1, pick 3: ...
- *   i=2, pick 6: remain=1, no solution
- *   i=3, pick 7: backtrack(3, [7], 0) -> FOUND! add [7]
+ * dfs(0, 7):
+ *   PICK 2: dfs(0, 5)
+ *     PICK 2: dfs(0, 3)
+ *       PICK 2: dfs(0, 1)
+ *         PICK 2: dfs(0, -1) -> remaining < 0, return
+ *         SKIP 2: dfs(1, 1)
+ *           PICK 3: dfs(1, -2) -> remaining < 0, return
+ *           SKIP 3: dfs(2, 1)
+ *             PICK 6: dfs(2, -5) -> remaining < 0, return
+ *             SKIP 6: dfs(3, 1)
+ *               PICK 7: dfs(3, -6) -> remaining < 0, return
+ *               SKIP 7: dfs(4, 1) -> index out of bounds, return
+ *       SKIP 2: dfs(1, 3)
+ *         PICK 3: dfs(1, 0) -> FOUND [2,2,3]
+ *         ...
+ *   SKIP 2: dfs(1, 7)
+ *     ...
+ *     eventually finds [7]
  */
 
 function combinationSum(candidates: number[], target: number): number[][] {
   const result: number[][] = [];
   const current: number[] = [];
 
-  function backtrack(index: number, remaining: number): void {
+  function dfs(index: number, remaining: number): void {
     // Found a valid combination
     if (remaining === 0) {
       result.push([...current]);
       return;
     }
 
-    // Try each candidate from current index onwards
-    for (let i = index; i < candidates.length; i++) {
-      const candidate = candidates[i];
-
-      // Skip if candidate is too large
-      if (candidate > remaining) {
-        continue;
-      }
-
-      // Include this candidate
-      current.push(candidate);
-      // Stay at same index (can reuse same element)
-      backtrack(i, remaining - candidate);
-      // Backtrack
-      current.pop();
+    // Base case: out of bounds or exceeded target
+    if (index >= candidates.length || remaining < 0) {
+      return;
     }
+
+    // PICK: Include candidates[index], stay at same index (can reuse)
+    current.push(candidates[index]);
+    dfs(index, remaining - candidates[index]);
+    current.pop();
+
+    // SKIP: Don't include, move to next candidate
+    dfs(index + 1, remaining);
   }
 
-  backtrack(0, target);
+  dfs(0, target);
   return result;
 }
 
@@ -111,28 +113,33 @@ function combinationSumOptimized(
   // Sort for early termination
   candidates.sort((a, b) => a - b);
 
-  function backtrack(index: number, remaining: number): void {
+  function dfs(index: number, remaining: number): void {
     if (remaining === 0) {
       result.push([...current]);
       return;
     }
 
-    for (let i = index; i < candidates.length; i++) {
-      const candidate = candidates[i];
-
-      // Early termination: if current candidate > remaining,
-      // all subsequent candidates will also be > remaining (sorted)
-      if (candidate > remaining) {
-        break;
-      }
-
-      current.push(candidate);
-      backtrack(i, remaining - candidate);
-      current.pop();
+    // Base case: out of bounds
+    if (index >= candidates.length) {
+      return;
     }
+
+    // Early termination: if current candidate > remaining,
+    // all subsequent candidates will also be > remaining (sorted)
+    if (candidates[index] > remaining) {
+      return;
+    }
+
+    // PICK: Include candidates[index], stay at same index (can reuse)
+    current.push(candidates[index]);
+    dfs(index, remaining - candidates[index]);
+    current.pop();
+
+    // SKIP: Don't include, move to next candidate
+    dfs(index + 1, remaining);
   }
 
-  backtrack(0, target);
+  dfs(0, target);
   return result;
 }
 

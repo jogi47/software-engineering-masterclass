@@ -71,27 +71,27 @@ function subsetsWithDup(nums: number[]): number[][] {
   // Sort to bring duplicates together
   nums.sort((a, b) => a - b);
 
-  function backtrack(index: number): void {
-    // Add current subset to results
-    result.push([...current]);
-
-    for (let i = index; i < nums.length; i++) {
-      // Skip duplicates at the same recursion level
-      // i > index ensures we don't skip the first occurrence
-      if (i > index && nums[i] === nums[i - 1]) {
-        continue;
-      }
-
-      // Include nums[i]
-      current.push(nums[i]);
-      // Recurse with next index
-      backtrack(i + 1);
-      // Backtrack
-      current.pop();
+  function dfs(index: number): void {
+    // Base case: processed all elements
+    if (index === nums.length) {
+      result.push([...current]);
+      return;
     }
+
+    // PICK: Include nums[index]
+    current.push(nums[index]);
+    dfs(index + 1);
+    current.pop();
+
+    // SKIP: Don't include, AND skip all duplicates of this value
+    let next = index + 1;
+    while (next < nums.length && nums[next] === nums[index]) {
+      next++;
+    }
+    dfs(next);
   }
 
-  backtrack(0);
+  dfs(0);
   return result;
 }
 

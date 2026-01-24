@@ -53,22 +53,23 @@ function subsets(nums: number[]): number[][] {
   const result: number[][] = [];
   const current: number[] = [];
 
-  function backtrack(index: number): void {
-    // Add current subset to results (we add at every node, not just leaves)
-    result.push([...current]);
-
-    // Try adding each remaining element
-    for (let i = index; i < nums.length; i++) {
-      // Include nums[i]
-      current.push(nums[i]);
-      // Recurse with next index
-      backtrack(i + 1);
-      // Backtrack: remove nums[i]
-      current.pop();
+  function dfs(index: number): void {
+    // Base case: processed all elements, add current subset
+    if (index === nums.length) {
+      result.push([...current]);
+      return;
     }
+
+    // PICK: Include nums[index]
+    current.push(nums[index]);
+    dfs(index + 1);
+    current.pop();
+
+    // SKIP: Don't include nums[index]
+    dfs(index + 1);
   }
 
-  backtrack(0);
+  dfs(0);
   return result;
 }
 
