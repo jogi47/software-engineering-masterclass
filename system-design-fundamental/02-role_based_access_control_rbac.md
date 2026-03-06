@@ -1,5 +1,7 @@
 # Role-Based Access Control (RBAC)
 
+[← Back to Index](README.md)
+
 Imagine you are building an application with thousands of users. You have regular users, managers, support staff, and administrators. Each group needs different levels of access to different parts of the system.
 
 Without a proper system in place, you end up with a tangled mess of conditional logic scattered throughout your codebase:
@@ -20,14 +22,14 @@ The core idea is simple but powerful: instead of assigning permissions directly 
 A "Support Agent" role might include permissions to view orders and process refunds. When someone joins the support team, you assign them that role, and they instantly get exactly the permissions they need. When they leave, you remove the role, and all access is revoked in one operation.
 
 In this chapter, you will learn:
-  * Why direct permission assignment fails at scale
-  * The core components of RBAC and how they relate
-  * How permission checks work step by step
-  * Different RBAC models (flat, hierarchical, constrained)
-  * How RBAC compares to other access control methods
-  * Database schema design for RBAC
-  * Implementation best practices
-  * Common pitfalls and how to avoid them
+  * [Why direct permission assignment fails at scale](#1-why-do-we-need-rbac)
+  * [The core components of RBAC and how they relate](#2-core-components-of-rbac)
+  * [How permission checks work step by step](#3-how-rbac-works)
+  * [Different RBAC models (flat, hierarchical, constrained)](#4-rbac-models)
+  * [How RBAC compares to other access control methods](#5-rbac-vs-other-access-control-models)
+  * [Database schema design for RBAC](#6-database-schema-for-rbac)
+  * [Implementation best practices](#7-implementation-best-practices)
+  * [Common pitfalls and how to avoid them](#9-common-pitfalls-to-avoid)
 
 
 # 1. Why Do We Need RBAC?

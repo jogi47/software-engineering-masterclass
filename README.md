@@ -540,12 +540,16 @@ dsa-playground/
 
 ## System Design Fundamentals
 
-2 core system design concepts with detailed explanations.
+4 core system design concepts with detailed explanations.
+
+Index: [system-design-fundamental/README.md](system-design-fundamental/README.md)
 
 | # | Topic | File | Description |
 |---|-------|------|-------------|
 | 01 | **SSL/TLS Explained** | [01-ssltls_explained.md](system-design-fundamental/01-ssltls_explained.md) | TLS handshake, certificates, encryption |
 | 02 | **Role-Based Access Control (RBAC)** | [02-role_based_access_control_rbac.md](system-design-fundamental/02-role_based_access_control_rbac.md) | Roles, permissions, access control models |
+| 03 | **Secrets Management** | [03-secrets_management.md](system-design-fundamental/03-secrets_management.md) | Secret lifecycle, dynamic credentials, rotation, tooling |
+| 04 | **SAML Explained** | [04-saml_explained.md](system-design-fundamental/04-saml_explained.md) | Enterprise SSO, assertions, bindings, security practices |
 
 ---
 

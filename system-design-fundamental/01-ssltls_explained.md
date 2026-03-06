@@ -1,17 +1,19 @@
 # SSL/TLS Explained
 
+[← Back to Index](README.md)
+
 Every time you see that padlock icon in your browser, there is a sophisticated cryptographic protocol working behind the scenes. That protocol is **TLS (Transport Layer Security)**, and it is the foundation of secure communication on the internet.
 
 Without TLS, every password you type, every credit card number you enter, and every private message you send would travel across the internet in plain text. Anyone sitting between you and the server, whether that is your ISP, a coffee shop's WiFi network, or a malicious actor, could read everything.
 
 In this chapter, you will learn:
-  * Why plaintext communication is dangerous
-  * How the TLS handshake establishes a secure connection
-  * The role of certificates and Certificate Authorities
-  * Symmetric vs asymmetric encryption and why TLS uses both
-  * How TLS 1.3 improves on previous versions
-  * Mutual TLS (mTLS) for service-to-service communication
-  * Common attacks and how to defend against them
+  * [Why plaintext communication is dangerous](#the-problem-insecure-communication)
+  * [How the TLS handshake establishes a secure connection](#how-the-tls-handshake-works)
+  * [The role of certificates and Certificate Authorities](#certificates-and-certificate-authorities)
+  * [Symmetric vs asymmetric encryption and why TLS uses both](#symmetric-vs-asymmetric-encryption)
+  * [How TLS 1.3 improves on previous versions](#tls-13-a-faster-handshake)
+  * [Mutual TLS (mTLS) for service-to-service communication](#mutual-tls-mtls)
+  * [Common attacks and how to defend against them](#common-tls-attacks-and-mitigations)
 
 
 These concepts apply whether you are building web applications, APIs, or microservices. Understanding TLS is essential for any engineer working on systems that handle sensitive data.
