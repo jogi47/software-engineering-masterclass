@@ -1078,7 +1078,7 @@ To run this implementation:
 
 ```bash
 # Save all the code to a single file: notification-system.ts
-npx ts-node low-level-design-interview/notification-system.ts
+npx ts-node 10-low-level-design-interview/02-design-notification-system.ts
 ```
 
 ### Expected Output

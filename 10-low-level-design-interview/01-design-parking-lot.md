@@ -1035,7 +1035,7 @@ To run this implementation:
 
 ```bash
 # Save all the code to a single file: parking-lot.ts
-npx ts-node low-level-design-interview/parking-lot.ts
+npx ts-node 10-low-level-design-interview/01-design-parking-lot.ts
 ```
 
 ### Expected Output

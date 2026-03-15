@@ -162,4 +162,4 @@ A well-known object that other objects can use to find common objects and servic
 
 ## Code Examples
 
-See the `patterns/poeaa/` directory for TypeScript implementations of each pattern.
+See the `03-design-patterns/poeaa/` directory for TypeScript implementations of each pattern.

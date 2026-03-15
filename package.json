@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "DSA practice problems in TypeScript",
   "scripts": {
-    "core": "ts-node problems/core/",
-    "easy": "ts-node problems/easy/",
-    "medium": "ts-node problems/medium/",
-    "hard": "ts-node problems/hard/",
+    "core": "ts-node 02-dsa-problems/core/",
+    "easy": "ts-node 02-dsa-problems/easy/",
+    "medium": "ts-node 02-dsa-problems/medium/",
+    "hard": "ts-node 02-dsa-problems/hard/",
     "pract": "ts-node practice/practice.ts"
   },
   "devDependencies": {

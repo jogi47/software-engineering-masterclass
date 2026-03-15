@@ -820,7 +820,7 @@ To run this implementation:
 
 ```bash
 # Save all the code to a single file: 03-design-search-autocomplete.ts
-npx ts-node low-level-design-interview/03-design-search-autocomplete.ts
+npx ts-node 10-low-level-design-interview/03-design-search-autocomplete.ts
 ```
 
 ### Expected Output
