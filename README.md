@@ -1,4 +1,4 @@
-# DSA Playground
+# Software Engineering Masterclass
 
 > A comprehensive TypeScript knowledge base for Data Structures, Algorithms, Design Patterns, System Design, and Database Internals.
 
@@ -52,7 +52,7 @@
 ## Directory Structure
 
 ```
-dsa-playground/
+software-engineering-masterclass/
 ├── 03-design-patterns/
 │   ├── core/                    # 10 fundamental GoF patterns
 │   ├── poeaa/                   # 20 enterprise architecture patterns
@@ -599,8 +599,8 @@ Comprehensive notes from Martin Kleppmann's book covering database internals and
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/dsa-playground.git
-cd dsa-playground
+git clone https://github.com/jogi47/software-engineering-masterclass.git
+cd software-engineering-masterclass
 
 # Install dependencies
 npm install
