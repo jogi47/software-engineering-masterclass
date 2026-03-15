@@ -2,10 +2,10 @@
 
 ## 1. Project Overview
 
-Build a serverless JavaScript runtime similar to Cloudflare Workers. This project focuses on creating a V8 isolate-based execution engine that can run JavaScript/TypeScript code with sub-millisecond cold starts and strong security isolation. This is the most technically specialized project, diving deep into JavaScript engine internals.
+Build a serverless JavaScript runtime similar to Cloudflare Workers. This project focuses on creating a V8 isolate-based execution engine that can run JavaScript/TypeScript code with very low startup latency and strong security isolation. This is the most technically specialized project, diving deep into JavaScript engine internals.
 
 ### Core Value Proposition
-- Execute JavaScript at the edge with microsecond startup
+- Execute JavaScript at the edge with isolate-based low-latency startup
 - Strong isolation between tenants (no shared state)
 - Low memory overhead per execution context
 - Web-standard APIs (Fetch, crypto, etc.)

@@ -526,7 +526,7 @@ Docker Container vs Firecracker MicroVM:
 │                    Docker Container                              │
 │  ┌───────────────────────────────────────────────────────────┐  │
 │  │  Pros:                          Cons:                      │  │
-│  │  + Fast startup (~100ms)        - Shared kernel            │  │
+│  │  + Fast startup                 - Shared kernel            │  │
 │  │  + Low overhead                 - Kernel exploits = escape │  │
 │  │  + Easy to use                  - Complex seccomp needed   │  │
 │  │  + Rich ecosystem               - Namespace limits         │  │
@@ -535,10 +535,10 @@ Docker Container vs Firecracker MicroVM:
 │                    Firecracker MicroVM                           │
 │  ┌───────────────────────────────────────────────────────────┐  │
 │  │  Pros:                          Cons:                      │  │
-│  │  + Separate kernel              - Slower startup (~125ms)  │  │
+│  │  + Separate kernel              - Typically slower startup │  │
 │  │  + Hardware isolation (KVM)     - Needs KVM support        │  │
 │  │  + Minimal attack surface       - More complex setup       │  │
-│  │  + AWS Lambda uses this         - Requires rootfs prep     │  │
+│  │  + Used in systems like AWS Lambda - Requires rootfs prep  │  │
 │  └───────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────┘
 ```

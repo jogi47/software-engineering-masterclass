@@ -60,7 +60,7 @@ A comprehensive memory system for AI agents that enables long-term retention, se
 ### Embeddings
 | Technology | Purpose |
 |------------|---------|
-| OpenAI text-embedding-3-small | Production embeddings |
+| OpenAI embedding model | Production embeddings |
 | Voyage AI | Alternative embeddings |
 | sentence-transformers | Local embeddings |
 | Cohere embed | Multilingual option |
@@ -995,7 +995,7 @@ class MemoryConsolidator:
         self,
         memory_manager: MemoryManager,
         embedding_service: EmbeddingService,
-        llm_model: str = "claude-sonnet-4-20250514"
+        llm_model: str = "your-provider-model-id"
     ):
         self.memory = memory_manager
         self.embedder = embedding_service
@@ -1108,7 +1108,7 @@ from typing import Any
 class PreferenceExtractor:
     """Extract user preferences from conversations using LLM."""
 
-    def __init__(self, model: str = "claude-haiku-4-20250514"):
+    def __init__(self, model: str = "your-extractor-model-id"):
         self.client = anthropic.AsyncAnthropic()
         self.model = model
 

@@ -71,14 +71,14 @@ An AI-powered application builder similar to Lovable.dev. Users describe what th
 | Next.js API Routes | Backend API |
 | Prisma | ORM |
 | PostgreSQL | Database |
-| NextAuth.js | Authentication |
+| Auth.js (NextAuth) | Authentication |
 | OpenAI API / Anthropic API | Code generation |
 | Redis | Rate limiting, caching |
 
 ### AI/LLM
 | Technology | Purpose |
 |------------|---------|
-| OpenAI GPT-4 / Claude | Code generation |
+| OpenAI / Anthropic code generation model | Code generation |
 | LangChain (optional) | LLM orchestration |
 | Streaming responses | Real-time output |
 
@@ -466,7 +466,7 @@ function parseGeneratedCode(response: string): FileUpdate[] {
 1. Initialize Next.js with TypeScript and Tailwind
 2. Set up Prisma with PostgreSQL
 3. Create database schema
-4. Set up authentication with NextAuth.js
+4. Set up authentication with Auth.js (NextAuth)
 5. Build landing page
 6. Build dashboard with project list
 7. Create basic 3-panel workspace layout
@@ -603,23 +603,22 @@ npm run dev
 ## 13. Key Challenges & Solutions
 
 ### Challenge 1: Streaming AI Responses
-**Solution**: Use Server-Sent Events (SSE) or Vercel AI SDK
+**Solution**: Use Server-Sent Events (SSE) or the AI SDK by Vercel
 
 ```typescript
-// Using Vercel AI SDK
-import { OpenAIStream, StreamingTextResponse } from 'ai';
+// Using AI SDK by Vercel
+import { streamText } from 'ai';
+import { openai } from '@ai-sdk/openai';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4',
+  const result = streamText({
+    model: openai('your-codegen-model'),
     messages,
-    stream: true,
   });
 
-  const stream = OpenAIStream(response);
-  return new StreamingTextResponse(stream);
+  return result.toDataStreamResponse();
 }
 ```
 

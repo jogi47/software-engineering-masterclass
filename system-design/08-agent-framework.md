@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-A production-ready agent framework implementing the ReAct (Reasoning + Acting) pattern. Agents observe their environment, reason about what to do, take actions using tools, and iterate until they complete a task. This project teaches you how modern AI agents like Claude Code, ChatGPT plugins, and LangChain agents work under the hood.
+A production-ready agent framework implementing the ReAct (Reasoning + Acting) pattern. Agents observe their environment, reason about what to do, take actions using tools, and iterate until they complete a task. This project teaches you how modern tool-using assistants and LangChain-style agents work under the hood.
 
 ### Core Value Proposition
 - Execute complex multi-step tasks autonomously
@@ -120,7 +120,7 @@ A production-ready agent framework implementing the ReAct (Reasoning + Acting) p
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           EXTERNAL SERVICES                                  │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
-│  │ Claude   │  │  GPT-4   │  │  Docker  │  │  Search  │  │  File    │      │
+│  │Provider A│  │Provider B│  │  Docker  │  │  Search  │  │  File    │      │
 │  │   API    │  │   API    │  │ Sandbox  │  │   APIs   │  │  System  │      │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘      │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -255,7 +255,7 @@ class ToolDefinition(BaseModel):
     parameters: dict[str, Any]  # JSON Schema
 
 class AgentConfig(BaseModel):
-    model: str = "claude-sonnet-4-20250514"
+    model: str = "your-provider-model-id"
     max_iterations: int = 10
     max_tokens: int = 4096
     temperature: float = 0.7
@@ -985,7 +985,7 @@ async def main():
     ))
 
     config = AgentConfig(
-        model="claude-sonnet-4-20250514",
+        model="your-provider-model-id",
         max_iterations=10,
         tools=["web_search", "execute_code", "read_file", "write_file"]
     )

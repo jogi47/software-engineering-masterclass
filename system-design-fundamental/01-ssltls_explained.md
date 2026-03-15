@@ -57,7 +57,7 @@ The same data is now encrypted and unreadable without the session keys.
 Without encryption, attackers can read all data in transit. TLS encrypts the entire communication channel.
 
 **2. Tampering (Integrity)**
-Attackers could modify data in transit. You request a $100 transfer, and an attacker changes it to $10,000. TLS includes message authentication codes (MACs) that detect any modification.
+Attackers could modify data in transit. You request a $100 transfer, and an attacker changes it to $10,000. TLS provides integrity protection and authenticated encryption so tampering is detected.
 
 **3. Impersonation (Authentication)**
 An attacker could pretend to be your bank. TLS uses certificates to verify the server's identity before you send any sensitive data.
@@ -77,7 +77,7 @@ SSL 3.0 (1996) - Major redesign (deprecated)
 TLS 1.0 (1999) - SSL 3.0 with minor changes
 TLS 1.1 (2006) - Security improvements (deprecated)
 TLS 1.2 (2008) - Still widely used
-TLS 1.3 (2018) - Current recommended version
+TLS 1.3 (2018) - Latest standardized TLS version and generally preferred when supported
 ```
 
 **Bottom line:** SSL is deprecated and insecure. Modern systems use TLS 1.2 or TLS 1.3. When someone says "SSL certificate," they almost always mean a certificate used with TLS.

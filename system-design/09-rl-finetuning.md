@@ -223,7 +223,7 @@ A comprehensive project for fine-tuning language models using modern techniques 
 │  │  └──────────────────────────────────────────────────────────┘       │    │
 │  │                         │                                            │    │
 │  │                         ▼                                            │    │
-│  │                   [GPT-4/Claude] ──▶ Score: 4/5                     │    │
+│  │             [LLM judge / reward model] ──▶ Score: 4/5              │    │
 │  └─────────────────────────────────────────────────────────────────────┘    │
 │           │                                                                  │
 │           ▼                                                                  │
@@ -849,9 +849,9 @@ class EvalRunner:
 
 
 class LLMJudge:
-    """Use GPT-4/Claude to evaluate responses."""
+    """Use a strong evaluation model to judge responses."""
 
-    def __init__(self, judge_model: str = "claude-sonnet-4-20250514"):
+    def __init__(self, judge_model: str = "your-judge-model-id"):
         self.client = anthropic.Anthropic()
         self.judge_model = judge_model
 

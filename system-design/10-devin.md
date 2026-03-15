@@ -59,7 +59,7 @@ A full-featured autonomous AI software engineer similar to Cognition's Devin. Th
 | Python 3.11+ | Backend orchestration |
 | TypeScript | Frontend and SDK |
 | Anthropic API | Claude for reasoning |
-| OpenAI API | GPT-4 fallback |
+| OpenAI API | Secondary model provider / fallback |
 
 ### Sandbox & Execution
 | Technology | Purpose |
@@ -72,7 +72,7 @@ A full-featured autonomous AI software engineer similar to Cognition's Devin. Th
 | Technology | Purpose |
 |------------|---------|
 | Playwright | Browser automation |
-| GPT-4V/Claude Vision | Screenshot analysis |
+| Vision-capable LLM | Screenshot analysis |
 | BeautifulSoup | HTML parsing |
 
 ### Frontend
@@ -882,7 +882,7 @@ class AgentOrchestrator:
         self,
         session: Session,
         sandbox_manager: SandboxManager,
-        model: str = "claude-sonnet-4-20250514"
+        model: str = "your-provider-model-id"
     ):
         self.session = session
         self.sandbox_manager = sandbox_manager

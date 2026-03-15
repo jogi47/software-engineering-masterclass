@@ -586,12 +586,12 @@ Access decisions based on attributes and policies:
 └────────────┴──────────────────────────────────────────────────────┘
 ```
 
-**Practical advice:** Start with RBAC. It handles 80% of use cases. Add ABAC rules only when RBAC is insufficient (e.g., "users can only access records in their region").
+**Practical advice:** Start with RBAC when permissions map cleanly to job functions. Add ABAC-style rules when RBAC alone is insufficient (for example, "users can only access records in their region").
 
 
 # 6. Database Schema for RBAC
 
-Here is a production-ready database schema for implementing RBAC:
+Here is one practical relational schema for implementing RBAC:
 
 ### Core Tables
 
@@ -940,7 +940,7 @@ async deleteOrder(user: User, orderId: string): Promise<void> {
 
 ### AWS IAM
 
-AWS Identity and Access Management implements RBAC with policies:
+AWS Identity and Access Management is broader than textbook RBAC. It includes role-based concepts, but in practice it is a policy-based IAM system that can also support attribute-based controls:
 
 ```json
 {

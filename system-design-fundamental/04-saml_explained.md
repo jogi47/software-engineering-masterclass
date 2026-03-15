@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: January 10, 2026
-
 If you have ever logged into a corporate application using your company's credentials, you have probably used **SAML** behind the scenes. That flow where you sign in once and then access Salesforce, Jira, Slack, and other enterprise tools without repeated logins is often powered by SAML SSO.
 
 **SAML (Security Assertion Markup Language)** has been a core enterprise single sign-on protocol for more than two decades. SAML 1.0 was standardized in 2002, and SAML 2.0 (the version used in practice today) was standardized in 2005.
@@ -126,7 +124,7 @@ User/Browser                SP                           IdP
 
 ### RelayState
 
-`RelayState` preserves where the user wanted to go before redirecting to IdP.  
+`RelayState` preserves where the user wanted to go before redirecting to IdP.
 Treat it as untrusted input and validate/allowlist values to prevent open redirects.
 
 
@@ -270,7 +268,7 @@ Cons:
 
 ### Recommendation
 
-Prefer **SP-initiated** when possible.  
+Prefer **SP-initiated** when possible.
 If you support IdP-initiated, apply stricter destination validation and short assertion lifetimes.
 
 

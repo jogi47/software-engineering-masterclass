@@ -68,7 +68,7 @@ A full-featured todo application that goes beyond basic CRUD operations. This pr
 | Next.js API Routes | Backend API |
 | Prisma | ORM |
 | PostgreSQL | Database |
-| NextAuth.js | Authentication |
+| Auth.js (NextAuth) | Authentication |
 | bcrypt | Password hashing |
 
 ### DevOps
@@ -311,7 +311,7 @@ interface TodoStore {
 6. Create basic UI components (Button, Input, Card)
 
 ### Phase 2: Authentication
-1. Install and configure NextAuth.js
+1. Install and configure Auth.js (NextAuth)
 2. Create User model in Prisma
 3. Build registration page and API
 4. Build login page and API

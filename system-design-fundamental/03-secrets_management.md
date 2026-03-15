@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: February 3, 2026
-
 Every application has secrets: database passwords, API keys, encryption keys, OAuth tokens, webhook signing secrets, and machine credentials. If these leak, an attacker can often skip your application logic entirely and go straight to your data or infrastructure.
 
 Good code does not save you from leaked credentials. Secrets management is about reducing that blast radius through identity-first access, short lifetimes, strong auditing, and safe rotation.
@@ -42,7 +40,7 @@ Secrets (high impact if exposed):
 - TLS_PRIVATE_KEY=...
 ```
 
-The key idea is **asymmetry of damage**.  
+The key idea is **asymmetry of damage**.
 Leaking a port number is usually harmless. Leaking a production database password can be catastrophic.
 
 ### Common Secret Types
@@ -92,7 +90,7 @@ Any weak link can leak a secret.
 
 ### The "Secret Zero" Problem
 
-To fetch a secret from a manager, a workload must authenticate first.  
+To fetch a secret from a manager, a workload must authenticate first.
 What credential does it use for that initial authentication?
 
 Modern platforms solve this with workload identity:
@@ -140,12 +138,12 @@ Environment variables are useful, but they can leak via:
 - process inspection tools
 - accidental logging
 
-Google Cloud's Secret Manager best practices explicitly warns against blindly passing secrets through env vars or filesystem in many cases.
+Google Cloud Secret Manager guidance cautions against relying blindly on environment variables or file-based delivery in cases where stronger controls or platform-native retrieval patterns are available.
 
 ### 3. Long-lived static credentials everywhere
 
-If credentials never expire, leaks are persistent by default.  
-Kubernetes also warns against long-lived ServiceAccount token secrets.
+If credentials never expire, leaks are persistent by default.
+Kubernetes guidance prefers short-lived, projected service account tokens over legacy long-lived secret-based tokens.
 
 ### 4. Overly broad access
 
@@ -169,7 +167,7 @@ Kubernetes explicitly cautions that by default Secret data in etcd can be unencr
 
 ### 7. Rotation policies that exist only on paper
 
-Policy without automation degrades quickly.  
+Policy without automation degrades quickly.
 OWASP recommends automated rotation and dynamic secrets where possible.
 
 
@@ -181,7 +179,7 @@ OWASP recommends automated rotation and dynamic secrets where possible.
 Code/config files contain plaintext credentials.
 ```
 
-Pros: simple.  
+Pros: simple.
 Cons: severe leak risk, hard rotation.
 
 ### Phase 2: Environment/CI Variable Storage
@@ -190,7 +188,7 @@ Cons: severe leak risk, hard rotation.
 Secrets stored in CI/CD or runtime env vars.
 ```
 
-Pros: better than hardcoding.  
+Pros: better than hardcoding.
 Cons: still static; often broad visibility.
 
 ### Phase 3: Centralized Secret Managers
@@ -199,7 +197,7 @@ Cons: still static; often broad visibility.
 Applications fetch secrets from a managed store at runtime.
 ```
 
-Pros: central policy, audit logs, versioning, rotation workflows.  
+Pros: central policy, audit logs, versioning, rotation workflows.
 Cons: needs strong auth bootstrap and runtime integration.
 
 ### Phase 4: Identity-First + Dynamic Secrets
@@ -209,7 +207,7 @@ Workload authenticates via platform identity.
 Secret manager issues short-lived, scoped credentials.
 ```
 
-Pros: minimum standing privilege, easier revocation, better traceability.  
+Pros: minimum standing privilege, easier revocation, better traceability.
 Cons: more system design and platform maturity required.
 
 
@@ -266,7 +264,7 @@ No single retrieval pattern fits every workload.
 app boot -> fetch secret once -> keep in memory -> refresh on schedule
 ```
 
-Good for: web backends, workers.  
+Good for: web backends, workers.
 Risks: stale secrets if refresh logic is weak.
 
 ### Pattern B: Sidecar/Agent Injection
@@ -275,15 +273,15 @@ Risks: stale secrets if refresh logic is weak.
 app <-> local agent/sidecar <-> secret manager
 ```
 
-Good for: polyglot workloads, legacy apps.  
-Strength: centralizes auth/renewal logic.  
+Good for: polyglot workloads, legacy apps.
+Strength: centralizes auth/renewal logic.
 Trade-off: extra moving parts per workload.
 
 ### Pattern C: CSI/Volume Mount in Kubernetes
 
 Using Secrets Store CSI Driver or equivalent integrations to mount external secrets into pods.
 
-Good for: Kubernetes clusters with external secret providers.  
+Good for: Kubernetes clusters with external secret providers.
 Trade-off: file-based secrets still need careful runtime protection.
 
 ### Pattern D: On-Demand Fetch per Request
@@ -292,7 +290,7 @@ Trade-off: file-based secrets still need careful runtime protection.
 each request -> fetch secret live
 ```
 
-Good for: rare high-security cases with strict freshness.  
+Good for: rare high-security cases with strict freshness.
 Trade-off: latency/cost/availability coupling to secret manager.
 
 ### Pattern E: Secretless Access (Preferred When Possible)
@@ -314,7 +312,7 @@ Dynamic secrets are generated per client request with short TTL and scoped permi
 
 ### Why Dynamic Credentials Matter
 
-Static credential reuse is dangerous.  
+Static credential reuse is dangerous.
 Dynamic credentials reduce:
 - credential sharing
 - dwell time after leaks
@@ -493,45 +491,45 @@ Kubernetes (if used):
 
 Official documentation and standards used for this chapter:
 
-- OWASP Secrets Management Cheat Sheet  
+- OWASP Secrets Management Cheat Sheet
   https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html
-- NIST SP 800-57 Part 1 Rev. 5 (Key Management)  
+- NIST SP 800-57 Part 1 Rev. 5 (Key Management)
   https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final
-- AWS Secrets Manager: What it is  
+- AWS Secrets Manager: What it is
   https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
-- AWS Secrets Manager Best Practices  
+- AWS Secrets Manager Best Practices
   https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html
-- AWS Secrets rotation by Lambda  
+- AWS Secrets rotation by Lambda
   https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda.html
-- AWS Systems Manager Parameter Store  
+- AWS Systems Manager Parameter Store
   https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
-- Google Secret Manager Best Practices (updated 2026-02-17 UTC)  
+- Google Secret Manager Best Practices
   https://cloud.google.com/secret-manager/docs/best-practices
-- Azure Key Vault: Secure Secrets (updated 2025-12-02)  
+- Azure Key Vault: Secure Secrets
   https://learn.microsoft.com/en-us/azure/key-vault/secrets/secure-secrets
-- Azure Secrets Best Practices (updated 2026-02-23)  
+- Azure Secrets Best Practices
   https://learn.microsoft.com/en-us/azure/security/fundamentals/secrets-best-practices
-- Managed identities for Azure resources  
+- Managed identities for Azure resources
   https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview
-- Kubernetes Secrets  
+- Kubernetes Secrets
   https://kubernetes.io/docs/concepts/configuration/secret/
-- Kubernetes Good Practices for Secrets  
+- Kubernetes Good Practices for Secrets
   https://kubernetes.io/docs/concepts/security/secrets-good-practices/
-- Kubernetes Service Accounts and TokenRequest guidance  
+- Kubernetes Service Accounts and TokenRequest guidance
   https://kubernetes.io/docs/concepts/security/service-accounts/
-- HashiCorp Vault Database Secrets Engine  
+- HashiCorp Vault Database Secrets Engine
   https://developer.hashicorp.com/vault/docs/secrets/databases
-- HashiCorp Vault Agent Injector  
+- HashiCorp Vault Agent Injector
   https://developer.hashicorp.com/vault/docs/deploy/kubernetes/injector
-- External Secrets Operator  
+- External Secrets Operator
   https://external-secrets.io/latest/
-- Secrets Store CSI Driver  
+- Secrets Store CSI Driver
   https://secrets-store-csi-driver.sigs.k8s.io/
-- GitHub Secret Scanning and Push Protection  
+- GitHub Secret Scanning and Push Protection
   https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection
-- GitLab Secret Detection  
+- GitLab Secret Detection
   https://docs.gitlab.com/user/application_security/secret_detection/
-- SOPS documentation  
+- SOPS documentation
   https://getsops.io/docs/
-- Sealed Secrets documentation  
+- Sealed Secrets documentation
   https://github.com/bitnami-labs/sealed-secrets
