@@ -9,11 +9,10 @@ This track is active but still early.
 What exists today:
 
 - [01-introduction_to_system_design_interviews.md](01-introduction_to_system_design_interviews.md) - Reader-facing introduction to the interview format
-- `factory/` - Source material / stubs that should not be edited directly
+- [02-types_of_system_design_questions.md](02-types_of_system_design_questions.md) - Practical categories and how they change your interview approach
 
 Likely next chapters:
 
-- Types of system design questions
 - Expectations by experience level
 - Must-know concepts for system design interviews
 
@@ -35,3 +34,4 @@ Once this folder fills out, the documents should be short, high-signal, and inte
 ## Index
 
 - [01-introduction_to_system_design_interviews.md](01-introduction_to_system_design_interviews.md)
+- [02-types_of_system_design_questions.md](02-types_of_system_design_questions.md)

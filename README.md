@@ -14,7 +14,7 @@ This repository has expanded well beyond the original DSA-only scope. This READM
 | Database internals | `04-database-basics/` | 12 DDIA chapter notes |
 | System design blueprints | `05-system-design/` | 16 end-to-end architecture documents |
 | System design fundamentals | `06-system-design-fundamental/` | 29 concept notes covering security, observability, data systems, and platform patterns |
-| System design interview basics | `07-system-design-interview-basics/` | 1 introductory interview-prep chapter, with room for more baseline notes |
+| System design interview basics | `07-system-design-interview-basics/` | 2 interview-prep chapters covering framing and question taxonomy |
 | System design interview case studies | `08-system-design-interview/` | 2 interview-style design problems |
 | Low-level design interview basics | `09-low-level-design-interview-basics/` | 2 foundational LLD prep notes |
 | Low-level design interview case studies | `10-low-level-design-interview/` | 3 LLD case studies, with runnable TypeScript where applicable |
@@ -491,6 +491,7 @@ Representative files:
 ### System Design Interview Basics Index
 
 - [01-introduction_to_system_design_interviews.md](07-system-design-interview-basics/01-introduction_to_system_design_interviews.md)
+- [02-types_of_system_design_questions.md](07-system-design-interview-basics/02-types_of_system_design_questions.md)
 
 ### System Design Interview Index
 
@@ -543,7 +544,6 @@ npx tsc --noEmit
 - DSA files use 3-digit numeric prefixes such as `001-two-sum.ts`
 - Design pattern and project documents use 2-digit prefixes such as `01-factory-method.ts` and `01-todo-app.md`
 - Most Markdown folders use ASCII diagrams and structured sections instead of loose notes
-- `factory/` folders contain source stubs or raw material and should generally not be edited directly
 
 ## Where To Start
 
