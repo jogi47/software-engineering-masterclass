@@ -890,7 +890,7 @@ Result: "XHelloY" - automatically correct!
 | Undo/Redo | Straightforward | Complex |
 | Proven at scale | Google Docs, Etherpad | Figma, Yjs |
 
-For a traditional client-server architecture, OT is well-proven. For offline-first or peer-to-peer, CRDTs excel.
+For a centralized client-server editor, OT is a reasonable default and has been proven in production systems. For offline-first or more decentralized collaboration models, CRDTs are often attractive because they reduce reliance on one central transformation authority.
 
 ## 6.2 Supporting Version History
 
@@ -1070,7 +1070,7 @@ With 100K concurrent collaborative sessions, we need efficient resource manageme
 
 ### Session Affinity
 
-All users editing document X must connect to the same server. This is critical because:
+One common design is to route all users editing document X to the same collaboration server while the session is active. This is attractive because:
 1. The server maintains in-memory state for OT
 2. Broadcasting happens locally (no cross-server communication for each keystroke)
 

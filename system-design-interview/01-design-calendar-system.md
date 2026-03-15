@@ -101,7 +101,7 @@ To keep our discussion focused, we will set aside a few features that, while imp
 
   * **Low Latency:** Calendar views should load within 200ms. Users expect snappy interactions when navigating between days/weeks.
   * **High Availability:** The system must be highly available (99.99% uptime). Missing a meeting due to calendar downtime is unacceptable.
-  * **Strong Consistency:** When an event is created or updated, all viewers should see the change immediately. No stale reads.
+  * **Consistency for Critical Writes:** The organizer and immediate attendees should see event creates or updates quickly with read-after-write behavior on the primary path. Some replicas, caches, and secondary devices may observe brief staleness.
   * **Reminder Accuracy:** Reminders must fire within seconds of their scheduled time. A reminder that arrives 5 minutes late defeats its purpose.
   * **Scalability:** Support 100M+ daily active users and billions of events.
   * **Time Zone Correctness:** Events must display correctly across all time zones, including during daylight saving transitions.
@@ -1060,7 +1060,7 @@ When a reminder is created:
 This approach:
 - Scales horizontally (add more workers)
 - Handles worker failures (messages return to queue)
-- Provides exactly-once semantics (with proper acknowledgment)
+- Usually provides at-least-once delivery, so reminder sending must be idempotent
 
 ### Implementation with Redis Sorted Sets
 
@@ -1265,4 +1265,3 @@ C) Materialized views
 D) Graph database for relationship queries
 
 **Answer: B** - Caching free/busy results in Redis with invalidation on event changes provides O(1) lookups for frequently queried users while keeping data fresh.
-
