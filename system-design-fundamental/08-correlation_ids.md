@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 Imagine you are debugging a failed order in a microservices system. The API gateway handled the request, the order service called inventory, inventory called pricing, and payment later timed out. Every service wrote logs, but they are mixed with thousands of other requests from the same second.
 
 Without a shared identifier, you end up doing this:
@@ -451,7 +449,7 @@ Metric alert
 
 ### W3C Trace Context
 
-For distributed tracing, `traceparent` is the standard header for propagating trace context between services.
+For distributed tracing, W3C Trace Context defines `traceparent` as the common header format for propagating trace context between services.
 
 If your system uses OpenTelemetry or another tracing stack, the most useful practice is usually:
 - propagate trace context using the tracing standard

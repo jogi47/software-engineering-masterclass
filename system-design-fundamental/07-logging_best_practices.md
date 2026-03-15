@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 Imagine you are debugging a checkout outage at 3 AM. The dashboard says error rate is up. Traces show the payment path is slow. You open the logs and find this:
 
 ```typescript
@@ -429,7 +427,7 @@ That workflow is much faster than searching raw logs first.
 
 ### Trace Context Standards
 
-For distributed systems, W3C Trace Context is the standard way to propagate tracing context between services.
+For distributed systems, W3C Trace Context is a common standard for propagating tracing context between services.
 
 If your services already use a tracing standard, log the corresponding trace identifiers so operators can jump between signals.
 

@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 Your dashboards look great during the day. Metrics are flowing, traces are searchable, and logs are centralized. Then at 3 AM, the database connection pool gets exhausted, checkout starts failing, and nobody notices until customers complain.
 
 That is the gap between **having observability data** and **acting on it in time**.
@@ -445,8 +443,11 @@ groups:
   - name: checkout-alerts
     rules:
       - alert: CheckoutHighErrorRate
-        expr: rate(http_requests_total{service="checkout",status_code=~"5.."}[10m])
-          / rate(http_requests_total{service="checkout"}[10m]) > 0.05
+        expr: (
+          rate(http_requests_total{service="checkout",status_code=~"5.."}[10m])
+          / rate(http_requests_total{service="checkout"}[10m])
+        ) > 0.05
+          and rate(http_requests_total{service="checkout"}[10m]) > 1
         for: 10m
         labels:
           severity: critical
@@ -476,6 +477,7 @@ groups:
 - make severity mappings explicit
 - add links to dashboards and runbooks
 - review fired alerts regularly
+- add traffic floors where percentage-based alerts would be misleading at low volume
 
 
 # 10. Summary

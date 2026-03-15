@@ -17,3 +17,4 @@ When you add a new `NN-topic_name.md` article, add it to this table in sequence.
 | 10 | **Alert Monitoring** | [10-alert_monitoring.md](10-alert_monitoring.md) | Actionable alerts, routing, escalation, alert fatigue, on-call practices |
 | 11 | **Dashboards and Runbooks** | [11-dashboards_runbooks.md](11-dashboards_runbooks.md) | Dashboard hierarchy, graph design, runbook structure, incident response linkage |
 | 12 | **Distributed Tracing** | [12-distributed_tracing.md](12-distributed_tracing.md) | Traces, spans, propagation, sampling, tracing backends, observability linkage |
+| 13 | **Batch vs Stream Processing** | [13-batch_vs_stream_processing.md](13-batch_vs_stream_processing.md) | Bounded vs unbounded data, latency trade-offs, windows, state, micro-batch, architecture choices |

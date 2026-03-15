@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 An alert fires at 3 AM: checkout errors are rising, latency is climbing, and customers are complaining. The on-call engineer opens the monitoring tool and sees fifty charts, six tabs, and no obvious answer. Then they search the wiki and find three outdated runbooks that disagree with each other.
 
 That is the difference between **having telemetry** and **being able to respond effectively**.

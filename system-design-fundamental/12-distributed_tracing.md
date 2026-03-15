@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 Your metrics dashboard shows checkout `p99` latency jumped from 200 ms to 2 seconds. Logs show scattered timeout messages. Correlation IDs tell you which events belong to the same request, but they still do not tell you where the time actually went.
 
 This is the gap between **knowing a request was slow** and **seeing the exact path that made it slow**.
@@ -278,7 +276,6 @@ The sampling decision is made near the start of the trace.
 
 Examples:
 - sample 1% of requests
-- sample 100% of error traffic
 - sample all requests for a specific environment
 
 #### Tail-Based Sampling
@@ -289,6 +286,7 @@ This can be useful for keeping:
 - slow traces
 - error traces
 - traces matching important routes or customers
+- all traces containing certain high-value failure conditions
 
 ### Comparison
 

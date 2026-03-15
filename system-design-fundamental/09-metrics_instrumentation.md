@@ -2,8 +2,6 @@
 
 [← Back to Index](README.md)
 
-Last Updated: March 15, 2026
-
 Your API has logs for failed requests, traces for slow calls, and customer support says the site "feels slower than usual." That still leaves a basic question unanswered:
 
 ```text
@@ -143,7 +141,7 @@ Histograms make percentile-style analysis practical in many monitoring systems.
 
 A summary also tracks distributions, but it calculates quantiles on the client side instead of exposing bucket counts.
 
-Whether summaries are a good fit depends on your monitoring backend and aggregation needs. In many large distributed systems, histograms are often easier to aggregate across instances.
+Whether summaries are a good fit depends on your monitoring backend and aggregation needs. In Prometheus-style systems, summaries are generally not aggregatable across instances, so histograms are often the more practical choice for fleet-level latency analysis.
 
 ### Comparison
 
