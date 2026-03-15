@@ -1,670 +1,553 @@
 # Software Engineering Masterclass
 
-> A comprehensive TypeScript knowledge base for Data Structures, Algorithms, Design Patterns, System Design, and Database Internals.
+> A TypeScript-first learning repository for data structures, algorithms, design patterns, system design, database internals, and interview preparation.
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=flat-square&logo=node.js&logoColor=white)
-![Patterns](https://img.shields.io/badge/Patterns-112-purple?style=flat-square)
-![Problems](https://img.shields.io/badge/Problems-88-orange?style=flat-square)
-![System Design](https://img.shields.io/badge/System%20Design-21-blue?style=flat-square)
-![LLD Interview](https://img.shields.io/badge/LLD%20Interview-3-green?style=flat-square)
+This repository has expanded well beyond the original DSA-only scope. This README is designed to work in two passes for a reader: a fast overview at the top, followed by a full master index for direct navigation.
 
----
+## What Is In The Repo
 
-## Overview
+| Area | Folder | Current Scope |
+| --- | --- | --- |
+| Language / runtime notes | `01-language-runtime/` | Python notes today, with room for more runtime topics |
+| DSA problems | `02-dsa-problems/` | 88 TypeScript files across `core`, `easy`, `medium`, and `hard` |
+| Design patterns | `03-design-patterns/` | 112 TypeScript examples across GoF, PoEAA, DDD, and refactoring |
+| Database internals | `04-database-basics/` | 12 DDIA chapter notes |
+| System design blueprints | `05-system-design/` | 16 end-to-end architecture documents |
+| System design fundamentals | `06-system-design-fundamental/` | 29 concept notes covering security, observability, data systems, and platform patterns |
+| System design interview basics | `07-system-design-interview-basics/` | 1 introductory interview-prep chapter, with room for more baseline notes |
+| System design interview case studies | `08-system-design-interview/` | 2 interview-style design problems |
+| Low-level design interview basics | `09-low-level-design-interview-basics/` | 2 foundational LLD prep notes |
+| Low-level design interview case studies | `10-low-level-design-interview/` | 3 LLD case studies, with runnable TypeScript where applicable |
+| Scratchpad | `practice/` | Local experimentation area |
 
-| Category | Count | Description |
-|----------|-------|-------------|
-| **Design Patterns** | 112 | Core GoF + PoEAA + DDD + Refactoring patterns |
-| **DSA Problems** | 88 | Data structures, algorithms, and LeetCode-style problems |
-| **System Design** | 16 | Real-world system architecture documents |
-| **System Design Interview** | 2 | Interview-focused system design problems |
-| **LLD Interview** | 3 | Low-level design interview problems |
-| **System Design Fundamentals** | 2 | Core concepts (SSL/TLS, RBAC) |
-| **DDIA Notes** | 12 | Designing Data-Intensive Applications book notes |
-| **TypeScript** | Strict | Full type safety with comprehensive documentation |
+## Repository Map
 
----
+```text
+software-engineering-masterclass/
+├── 01-language-runtime/
+├── 02-dsa-problems/
+│   ├── core/
+│   ├── easy/
+│   ├── medium/
+│   └── hard/
+├── 03-design-patterns/
+│   ├── core/
+│   ├── poeaa/
+│   ├── ddd/
+│   └── refactoring/
+├── 04-database-basics/
+│   └── ddia/
+├── 05-system-design/
+├── 06-system-design-fundamental/
+├── 07-system-design-interview-basics/
+├── 08-system-design-interview/
+├── 09-low-level-design-interview-basics/
+├── 10-low-level-design-interview/
+└── practice/
+```
+
+## Folder READMEs
+
+These reader-facing folder indexes are maintained in top-level folder order:
+
+1. [01-language-runtime/README.md](01-language-runtime/README.md)
+2. [02-dsa-problems/README.md](02-dsa-problems/README.md)
+3. [03-design-patterns/README.md](03-design-patterns/README.md)
+4. [04-database-basics/README.md](04-database-basics/README.md)
+5. [05-system-design/README.md](05-system-design/README.md)
+6. [06-system-design-fundamental/README.md](06-system-design-fundamental/README.md)
+7. [07-system-design-interview-basics/README.md](07-system-design-interview-basics/README.md)
+8. [08-system-design-interview/README.md](08-system-design-interview/README.md)
+9. [09-low-level-design-interview-basics/README.md](09-low-level-design-interview-basics/README.md)
+10. [10-low-level-design-interview/README.md](10-low-level-design-interview/README.md)
+11. [practice/README.md](practice/README.md)
 
 ## Table of Contents
 
-- [Directory Structure](#directory-structure)
-- [Design Patterns](#design-patterns)
-  - [Core Patterns (GoF)](#core-patterns-gof)
-  - [PoEAA Patterns](#poeaa-patterns)
-  - [DDD Patterns](#ddd-patterns)
-  - [Refactoring Patterns](#refactoring-patterns)
-- [DSA Problems](#dsa-problems)
-  - [Core Data Structures & Algorithms](#core-data-structures--algorithms)
-  - [Easy Problems](#easy-problems)
-  - [Medium Problems](#medium-problems)
-  - [Hard Problems](#hard-problems)
-- [System Design](#system-design)
-- [System Design Interview](#system-design-interview)
-- [Low-Level Design Interview](#low-level-design-interview)
-- [System Design Fundamentals](#system-design-fundamentals)
-- [Database & Distributed Systems](#database--distributed-systems)
-  - [DDIA - Designing Data-Intensive Applications](#ddia---designing-data-intensive-applications)
+- [What Is In The Repo](#what-is-in-the-repo)
+- [Repository Map](#repository-map)
+- [Folder READMEs](#folder-readmes)
+- [Highlights](#highlights)
+- [Master Index](#master-index)
+  - [Language Runtime Index](#language-runtime-index)
+  - [DSA Problems Index](#dsa-problems-index)
+  - [Design Patterns Index](#design-patterns-index)
+  - [Database And Distributed Systems Index](#database-and-distributed-systems-index)
+  - [System Design Blueprints Index](#system-design-blueprints-index)
+  - [System Design Fundamentals Index](#system-design-fundamentals-index)
+  - [System Design Interview Basics Index](#system-design-interview-basics-index)
+  - [System Design Interview Index](#system-design-interview-index)
+  - [Low-Level Design Interview Basics Index](#low-level-design-interview-basics-index)
+  - [Low-Level Design Interview Index](#low-level-design-interview-index)
 - [Getting Started](#getting-started)
-
----
-
-## Directory Structure
-
-```
-software-engineering-masterclass/
-├── 03-design-patterns/
-│   ├── core/                    # 10 fundamental GoF patterns
-│   ├── poeaa/                   # 20 enterprise architecture patterns
-│   │   ├── base/
-│   │   ├── data-source/
-│   │   ├── distribution/
-│   │   ├── domain-logic/
-│   │   ├── object-relational/
-│   │   └── web-presentation/
-│   ├── ddd/                     # 21 domain-driven design patterns
-│   │   ├── building-blocks/
-│   │   ├── strategic/
-│   │   └── supple-design/
-│   └── refactoring/             # 61 refactoring patterns
-│       ├── basic/
-│       ├── encapsulation/
-│       ├── moving-features/
-│       ├── organizing-data/
-│       ├── simplifying-conditional/
-│       ├── refactoring-apis/
-│       └── inheritance/
-├── 02-dsa-problems/
-│   ├── core/                    # 12 data structures & sorting algorithms
-│   ├── easy/                    # 18 easy difficulty problems
-│   ├── medium/                  # 47 medium difficulty problems
-│   └── hard/                    # 11 hard difficulty problems
-├── 05-system-design/               # 16 system design documents
-├── 08-system-design-interview/     # 2 system design interview problems
-├── 10-low-level-design-interview/  # 3 LLD interview problems
-├── 06-system-design-fundamental/   # 2 system design concepts
-├── 04-database-basics/
-│   └── ddia/                    # 12 chapters of DDIA notes
-│       ├── foundations/
-│       ├── distributed-data/
-│       └── derived-data/
-└── 01-language-runtime/
-    └── python/                  # Python language notes
-```
-
----
-
-## Design Patterns
-
-### Core Patterns (GoF)
-
-10 fundamental design patterns from the Gang of Four book.
-
-| # | Pattern | Category | File | Description |
-|---|---------|----------|------|-------------|
-| 01 | **Factory Method** | Creational | [01-factory-method.ts](03-design-patterns/core/01-factory-method.ts) | Object creation without specifying exact class |
-| 02 | **Singleton** | Creational | [02-singleton.ts](03-design-patterns/core/02-singleton.ts) | Single instance with global access point |
-| 03 | **Builder** | Creational | [03-builder.ts](03-design-patterns/core/03-builder.ts) | Step-by-step complex object construction |
-| 04 | **Prototype** | Creational | [04-prototype.ts](03-design-patterns/core/04-prototype.ts) | Clone existing objects without coupling |
-| 05 | **Adapter** | Structural | [05-adapter.ts](03-design-patterns/core/05-adapter.ts) | Bridge incompatible interfaces |
-| 06 | **Decorator** | Structural | [06-decorator.ts](03-design-patterns/core/06-decorator.ts) | Add behavior dynamically to objects |
-| 07 | **Facade** | Structural | [07-facade.ts](03-design-patterns/core/07-facade.ts) | Simplified interface to complex subsystem |
-| 08 | **Strategy** | Behavioral | [08-strategy.ts](03-design-patterns/core/08-strategy.ts) | Interchangeable algorithm families |
-| 09 | **Observer** | Behavioral | [09-observer.ts](03-design-patterns/core/09-observer.ts) | Subscription-based event notification |
-| 10 | **State** | Behavioral | [10-state.ts](03-design-patterns/core/10-state.ts) | Behavior changes based on internal state |
-
----
-
-### PoEAA Patterns
-
-20 patterns from Martin Fowler's "Patterns of Enterprise Application Architecture".
-
-#### Domain Logic Patterns (4)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Transaction Script** | [01-transaction-script.ts](03-design-patterns/poeaa/domain-logic/01-transaction-script.ts) | Organizes business logic by procedures |
-| 02 | **Table Module** | [02-table-module.ts](03-design-patterns/poeaa/domain-logic/02-table-module.ts) | Single instance handling logic for a table |
-| 03 | **Domain Model** | [03-domain-model.ts](03-design-patterns/poeaa/domain-logic/03-domain-model.ts) | Object model incorporating behavior and data |
-| 04 | **Service Layer** | [04-service-layer.ts](03-design-patterns/poeaa/domain-logic/04-service-layer.ts) | Defines application boundary with operations |
-
-#### Data Source Patterns (4)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Table Data Gateway** | [01-table-data-gateway.ts](03-design-patterns/poeaa/data-source/01-table-data-gateway.ts) | Gateway to a database table |
-| 02 | **Row Data Gateway** | [02-row-data-gateway.ts](03-design-patterns/poeaa/data-source/02-row-data-gateway.ts) | Gateway to a single record |
-| 03 | **Active Record** | [03-active-record.ts](03-design-patterns/poeaa/data-source/03-active-record.ts) | Object wrapping a row with database access |
-| 04 | **Data Mapper** | [04-data-mapper.ts](03-design-patterns/poeaa/data-source/04-data-mapper.ts) | Layer separating domain objects from database |
-
-#### Object-Relational Patterns (4)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Identity Map** | [01-identity-map.ts](03-design-patterns/poeaa/object-relational/01-identity-map.ts) | Ensures each object loaded only once |
-| 02 | **Lazy Load** | [02-lazy-load.ts](03-design-patterns/poeaa/object-relational/02-lazy-load.ts) | Defers loading of object data until needed |
-| 03 | **Unit of Work** | [03-unit-of-work.ts](03-design-patterns/poeaa/object-relational/03-unit-of-work.ts) | Maintains list of objects affected by transaction |
-| 04 | **Repository** | [04-repository.ts](03-design-patterns/poeaa/object-relational/04-repository.ts) | Collection-like interface for domain objects |
-
-#### Web Presentation Patterns (3)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Page Controller** | [01-page-controller.ts](03-design-patterns/poeaa/web-presentation/01-page-controller.ts) | Controller for each page/action |
-| 02 | **Front Controller** | [02-front-controller.ts](03-design-patterns/poeaa/web-presentation/02-front-controller.ts) | Single handler for all requests |
-| 03 | **MVC** | [03-mvc.ts](03-design-patterns/poeaa/web-presentation/03-mvc.ts) | Model-View-Controller separation |
-
-#### Distribution Patterns (2)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **DTO** | [01-dto.ts](03-design-patterns/poeaa/distribution/01-dto.ts) | Data transfer between processes |
-| 02 | **Remote Facade** | [02-remote-facade.ts](03-design-patterns/poeaa/distribution/02-remote-facade.ts) | Coarse-grained facade for remote access |
-
-#### Base Patterns (3)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Gateway** | [01-gateway.ts](03-design-patterns/poeaa/base/01-gateway.ts) | Encapsulates access to external system |
-| 02 | **Registry** | [02-registry.ts](03-design-patterns/poeaa/base/02-registry.ts) | Well-known object for finding services |
-| 03 | **Value Object** | [03-value-object.ts](03-design-patterns/poeaa/base/03-value-object.ts) | Immutable object defined by its attributes |
-
----
-
-### DDD Patterns
-
-21 patterns from Eric Evans' "Domain-Driven Design" book.
-
-#### Building Blocks (8)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Entity** | [01-entity.ts](03-design-patterns/ddd/building-blocks/01-entity.ts) | Object defined by identity, not attributes |
-| 02 | **Value Object** | [02-value-object.ts](03-design-patterns/ddd/building-blocks/02-value-object.ts) | Immutable object defined by attributes |
-| 03 | **Aggregate** | [03-aggregate.ts](03-design-patterns/ddd/building-blocks/03-aggregate.ts) | Cluster of objects with consistency boundary |
-| 04 | **Domain Event** | [04-domain-event.ts](03-design-patterns/ddd/building-blocks/04-domain-event.ts) | Record of something that happened |
-| 05 | **Domain Service** | [05-domain-service.ts](03-design-patterns/ddd/building-blocks/05-domain-service.ts) | Stateless operations on domain concepts |
-| 06 | **Repository** | [06-repository.ts](03-design-patterns/ddd/building-blocks/06-repository.ts) | Collection-like interface for aggregates |
-| 07 | **Factory** | [07-factory.ts](03-design-patterns/ddd/building-blocks/07-factory.ts) | Encapsulates complex object creation |
-| 08 | **Module** | [08-module.ts](03-design-patterns/ddd/building-blocks/08-module.ts) | Grouping related domain concepts |
-
-#### Strategic Design (8)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Bounded Context** | [01-bounded-context.ts](03-design-patterns/ddd/strategic/01-bounded-context.ts) | Explicit boundary with unified model |
-| 02 | **Context Map** | [02-context-map.ts](03-design-patterns/ddd/strategic/02-context-map.ts) | Visualization of context relationships |
-| 03 | **Shared Kernel** | [03-shared-kernel.ts](03-design-patterns/ddd/strategic/03-shared-kernel.ts) | Shared subset between contexts |
-| 04 | **Customer/Supplier** | [04-customer-supplier.ts](03-design-patterns/ddd/strategic/04-customer-supplier.ts) | Upstream/downstream relationship |
-| 05 | **Conformist** | [05-conformist.ts](03-design-patterns/ddd/strategic/05-conformist.ts) | Following upstream model as-is |
-| 06 | **Anti-Corruption Layer** | [06-anticorruption-layer.ts](03-design-patterns/ddd/strategic/06-anticorruption-layer.ts) | Translation between contexts |
-| 07 | **Open Host Service** | [07-open-host-service.ts](03-design-patterns/ddd/strategic/07-open-host-service.ts) | Protocol/API for external access |
-| 08 | **Published Language** | [08-published-language.ts](03-design-patterns/ddd/strategic/08-published-language.ts) | Well-documented shared language |
-
-#### Supple Design (5)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Intention-Revealing Interface** | [01-intention-revealing-interface.ts](03-design-patterns/ddd/supple-design/01-intention-revealing-interface.ts) | Names that express intent |
-| 02 | **Side-Effect-Free Functions** | [02-side-effect-free-functions.ts](03-design-patterns/ddd/supple-design/02-side-effect-free-functions.ts) | Pure functions in domain |
-| 03 | **Assertions** | [03-assertions.ts](03-design-patterns/ddd/supple-design/03-assertions.ts) | Post-conditions and invariants |
-| 04 | **Standalone Classes** | [04-standalone-classes.ts](03-design-patterns/ddd/supple-design/04-standalone-classes.ts) | Self-contained, low dependency |
-| 05 | **Specification** | [05-specification.ts](03-design-patterns/ddd/supple-design/05-specification.ts) | Business rules as objects |
-
----
-
-### Refactoring Patterns
-
-61 patterns from Martin Fowler's "Refactoring: Improving the Design of Existing Code" (2nd Edition).
-
-#### Basic Refactorings (11)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Extract Function** | [01-extract-function.ts](03-design-patterns/refactoring/basic/01-extract-function.ts) | Create a new function from code fragment |
-| 02 | **Inline Function** | [02-inline-function.ts](03-design-patterns/refactoring/basic/02-inline-function.ts) | Replace function call with function body |
-| 03 | **Extract Variable** | [03-extract-variable.ts](03-design-patterns/refactoring/basic/03-extract-variable.ts) | Replace expression with named variable |
-| 04 | **Inline Variable** | [04-inline-variable.ts](03-design-patterns/refactoring/basic/04-inline-variable.ts) | Replace variable with its value |
-| 05 | **Change Function Declaration** | [05-change-function-declaration.ts](03-design-patterns/refactoring/basic/05-change-function-declaration.ts) | Rename function or change parameters |
-| 06 | **Encapsulate Variable** | [06-encapsulate-variable.ts](03-design-patterns/refactoring/basic/06-encapsulate-variable.ts) | Wrap variable access in functions |
-| 07 | **Rename Variable** | [07-rename-variable.ts](03-design-patterns/refactoring/basic/07-rename-variable.ts) | Give variable a clearer name |
-| 08 | **Introduce Parameter Object** | [08-introduce-parameter-object.ts](03-design-patterns/refactoring/basic/08-introduce-parameter-object.ts) | Replace related parameters with object |
-| 09 | **Combine Functions into Class** | [09-combine-functions-into-class.ts](03-design-patterns/refactoring/basic/09-combine-functions-into-class.ts) | Group functions operating on same data |
-| 10 | **Combine Functions into Transform** | [10-combine-functions-into-transform.ts](03-design-patterns/refactoring/basic/10-combine-functions-into-transform.ts) | Create transformation function for data |
-| 11 | **Split Phase** | [11-split-phase.ts](03-design-patterns/refactoring/basic/11-split-phase.ts) | Separate code into distinct phases |
-
-#### Encapsulation (9)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Encapsulate Record** | [01-encapsulate-record.ts](03-design-patterns/refactoring/encapsulation/01-encapsulate-record.ts) | Replace record with class |
-| 02 | **Encapsulate Collection** | [02-encapsulate-collection.ts](03-design-patterns/refactoring/encapsulation/02-encapsulate-collection.ts) | Return copy, not reference |
-| 03 | **Replace Primitive with Object** | [03-replace-primitive-with-object.ts](03-design-patterns/refactoring/encapsulation/03-replace-primitive-with-object.ts) | Wrap primitive in meaningful class |
-| 04 | **Replace Temp with Query** | [04-replace-temp-with-query.ts](03-design-patterns/refactoring/encapsulation/04-replace-temp-with-query.ts) | Extract temp calculation to method |
-| 05 | **Extract Class** | [05-extract-class.ts](03-design-patterns/refactoring/encapsulation/05-extract-class.ts) | Split class with multiple responsibilities |
-| 06 | **Inline Class** | [06-inline-class.ts](03-design-patterns/refactoring/encapsulation/06-inline-class.ts) | Merge class with insufficient behavior |
-| 07 | **Hide Delegate** | [07-hide-delegate.ts](03-design-patterns/refactoring/encapsulation/07-hide-delegate.ts) | Remove dependency on delegate's interface |
-| 08 | **Remove Middle Man** | [08-remove-middle-man.ts](03-design-patterns/refactoring/encapsulation/08-remove-middle-man.ts) | Let clients call delegate directly |
-| 09 | **Substitute Algorithm** | [09-substitute-algorithm.ts](03-design-patterns/refactoring/encapsulation/09-substitute-algorithm.ts) | Replace algorithm with clearer one |
-
-#### Moving Features (9)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Move Function** | [01-move-function.ts](03-design-patterns/refactoring/moving-features/01-move-function.ts) | Move function to better context |
-| 02 | **Move Field** | [02-move-field.ts](03-design-patterns/refactoring/moving-features/02-move-field.ts) | Move field to class that uses it more |
-| 03 | **Move Statements into Function** | [03-move-statements-into-function.ts](03-design-patterns/refactoring/moving-features/03-move-statements-into-function.ts) | Move statements into called function |
-| 04 | **Move Statements to Callers** | [04-move-statements-to-callers.ts](03-design-patterns/refactoring/moving-features/04-move-statements-to-callers.ts) | Move statements out to callers |
-| 05 | **Replace Inline Code with Function Call** | [05-replace-inline-code-with-function-call.ts](03-design-patterns/refactoring/moving-features/05-replace-inline-code-with-function-call.ts) | Replace code with existing function |
-| 06 | **Slide Statements** | [06-slide-statements.ts](03-design-patterns/refactoring/moving-features/06-slide-statements.ts) | Move related code together |
-| 07 | **Split Loop** | [07-split-loop.ts](03-design-patterns/refactoring/moving-features/07-split-loop.ts) | Separate loops that do multiple things |
-| 08 | **Replace Loop with Pipeline** | [08-replace-loop-with-pipeline.ts](03-design-patterns/refactoring/moving-features/08-replace-loop-with-pipeline.ts) | Use collection pipeline operations |
-| 09 | **Remove Dead Code** | [09-remove-dead-code.ts](03-design-patterns/refactoring/moving-features/09-remove-dead-code.ts) | Delete unreachable or unused code |
-
-#### Organizing Data (5)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Split Variable** | [01-split-variable.ts](03-design-patterns/refactoring/organizing-data/01-split-variable.ts) | Create separate variable for each purpose |
-| 02 | **Rename Field** | [02-rename-field.ts](03-design-patterns/refactoring/organizing-data/02-rename-field.ts) | Give field a clearer name |
-| 03 | **Replace Derived Variable with Query** | [03-replace-derived-variable-with-query.ts](03-design-patterns/refactoring/organizing-data/03-replace-derived-variable-with-query.ts) | Replace stored calculation with method |
-| 04 | **Change Reference to Value** | [04-change-reference-to-value.ts](03-design-patterns/refactoring/organizing-data/04-change-reference-to-value.ts) | Make object immutable value object |
-| 05 | **Change Value to Reference** | [05-change-value-to-reference.ts](03-design-patterns/refactoring/organizing-data/05-change-value-to-reference.ts) | Share single instance across system |
-
-#### Simplifying Conditional Logic (6)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Decompose Conditional** | [01-decompose-conditional.ts](03-design-patterns/refactoring/simplifying-conditional/01-decompose-conditional.ts) | Extract condition and branches to functions |
-| 02 | **Consolidate Conditional Expression** | [02-consolidate-conditional-expression.ts](03-design-patterns/refactoring/simplifying-conditional/02-consolidate-conditional-expression.ts) | Combine related conditions |
-| 03 | **Replace Nested Conditional with Guard Clauses** | [03-replace-nested-conditional-with-guard-clauses.ts](03-design-patterns/refactoring/simplifying-conditional/03-replace-nested-conditional-with-guard-clauses.ts) | Use guard clauses for special cases |
-| 04 | **Replace Conditional with Polymorphism** | [04-replace-conditional-with-polymorphism.ts](03-design-patterns/refactoring/simplifying-conditional/04-replace-conditional-with-polymorphism.ts) | Use polymorphism instead of conditionals |
-| 05 | **Introduce Special Case** | [05-introduce-special-case.ts](03-design-patterns/refactoring/simplifying-conditional/05-introduce-special-case.ts) | Handle special case with dedicated class |
-| 06 | **Introduce Assertion** | [06-introduce-assertion.ts](03-design-patterns/refactoring/simplifying-conditional/06-introduce-assertion.ts) | Make assumptions explicit with assertions |
-
-#### Refactoring APIs (10)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Separate Query from Modifier** | [01-separate-query-from-modifier.ts](03-design-patterns/refactoring/refactoring-apis/01-separate-query-from-modifier.ts) | Split function that queries and modifies |
-| 02 | **Parameterize Function** | [02-parameterize-function.ts](03-design-patterns/refactoring/refactoring-apis/02-parameterize-function.ts) | Add parameter to generalize function |
-| 03 | **Remove Flag Argument** | [03-remove-flag-argument.ts](03-design-patterns/refactoring/refactoring-apis/03-remove-flag-argument.ts) | Replace flag with separate functions |
-| 04 | **Preserve Whole Object** | [04-preserve-whole-object.ts](03-design-patterns/refactoring/refactoring-apis/04-preserve-whole-object.ts) | Pass whole object instead of fields |
-| 05 | **Replace Parameter with Query** | [05-replace-parameter-with-query.ts](03-design-patterns/refactoring/refactoring-apis/05-replace-parameter-with-query.ts) | Remove parameter obtainable from other data |
-| 06 | **Replace Query with Parameter** | [06-replace-query-with-parameter.ts](03-design-patterns/refactoring/refactoring-apis/06-replace-query-with-parameter.ts) | Pass value instead of querying global state |
-| 07 | **Remove Setting Method** | [07-remove-setting-method.ts](03-design-patterns/refactoring/refactoring-apis/07-remove-setting-method.ts) | Make field immutable after construction |
-| 08 | **Replace Constructor with Factory Function** | [08-replace-constructor-with-factory-function.ts](03-design-patterns/refactoring/refactoring-apis/08-replace-constructor-with-factory-function.ts) | Use factory for flexible creation |
-| 09 | **Replace Function with Command** | [09-replace-function-with-command.ts](03-design-patterns/refactoring/refactoring-apis/09-replace-function-with-command.ts) | Wrap function in command object |
-| 10 | **Replace Command with Function** | [10-replace-command-with-function.ts](03-design-patterns/refactoring/refactoring-apis/10-replace-command-with-function.ts) | Simplify command back to function |
-
-#### Dealing with Inheritance (11)
-
-| # | Pattern | File | Description |
-|---|---------|------|-------------|
-| 01 | **Pull Up Method** | [01-pull-up-method.ts](03-design-patterns/refactoring/inheritance/01-pull-up-method.ts) | Move method from subclasses to superclass |
-| 02 | **Pull Up Field** | [02-pull-up-field.ts](03-design-patterns/refactoring/inheritance/02-pull-up-field.ts) | Move field from subclasses to superclass |
-| 03 | **Pull Up Constructor Body** | [03-pull-up-constructor-body.ts](03-design-patterns/refactoring/inheritance/03-pull-up-constructor-body.ts) | Move common constructor code to super |
-| 04 | **Push Down Method** | [04-push-down-method.ts](03-design-patterns/refactoring/inheritance/04-push-down-method.ts) | Move method from superclass to subclasses |
-| 05 | **Push Down Field** | [05-push-down-field.ts](03-design-patterns/refactoring/inheritance/05-push-down-field.ts) | Move field from superclass to subclasses |
-| 06 | **Replace Type Code with Subclasses** | [06-replace-type-code-with-subclasses.ts](03-design-patterns/refactoring/inheritance/06-replace-type-code-with-subclasses.ts) | Use subclasses instead of type field |
-| 07 | **Remove Subclass** | [07-remove-subclass.ts](03-design-patterns/refactoring/inheritance/07-remove-subclass.ts) | Replace subclass with field in superclass |
-| 08 | **Extract Superclass** | [08-extract-superclass.ts](03-design-patterns/refactoring/inheritance/08-extract-superclass.ts) | Create superclass from common features |
-| 09 | **Collapse Hierarchy** | [09-collapse-hierarchy.ts](03-design-patterns/refactoring/inheritance/09-collapse-hierarchy.ts) | Merge superclass and subclass |
-| 10 | **Replace Subclass with Delegate** | [10-replace-subclass-with-delegate.ts](03-design-patterns/refactoring/inheritance/10-replace-subclass-with-delegate.ts) | Use composition instead of inheritance |
-| 11 | **Replace Superclass with Delegate** | [11-replace-superclass-with-delegate.ts](03-design-patterns/refactoring/inheritance/11-replace-superclass-with-delegate.ts) | Delegate instead of inheriting |
-
----
-
-## DSA Problems
-
-### Core Data Structures & Algorithms
-
-12 fundamental data structure and sorting algorithm implementations.
-
-#### Data Structures (9)
-
-| # | Data Structure | File | Description |
-|---|----------------|------|-------------|
-| 001 | **Dynamic Array** | [001-dynamic-array.ts](02-dsa-problems/core/001-dynamic-array.ts) | Resizable array with amortized O(1) append |
-| 002 | **Singly Linked List** | [002-singly-linked-list.ts](02-dsa-problems/core/002-singly-linked-list.ts) | Linear collection with O(1) head operations |
-| 003 | **Double-Ended Queue** | [003-double-ended-queue.ts](02-dsa-problems/core/003-double-ended-queue.ts) | Deque with O(1) operations at both ends |
-| 004 | **Binary Search Tree** | [004-binary-search-tree.ts](02-dsa-problems/core/004-binary-search-tree.ts) | Ordered tree with O(log n) operations |
-| 005 | **Hash Table** | [005-hash-table.ts](02-dsa-problems/core/005-hash-table.ts) | Key-value store with O(1) average operations |
-| 006 | **Heap** | [006-heap.ts](02-dsa-problems/core/006-heap.ts) | Priority queue with O(log n) insert/extract |
-| 007 | **Graph** | [007-graph.ts](02-dsa-problems/core/007-graph.ts) | Adjacency list representation with traversals |
-| 008 | **Disjoint Set** | [008-disjoint-set.ts](02-dsa-problems/core/008-disjoint-set.ts) | Union-Find with path compression |
-| 009 | **Segment Tree** | [009-segment-tree.ts](02-dsa-problems/core/009-segment-tree.ts) | Range queries and updates in O(log n) |
-
-#### Sorting Algorithms (3)
-
-| # | Algorithm | File | Time Complexity | Space |
-|---|-----------|------|-----------------|-------|
-| 010 | **Insertion Sort** | [010-insertion-sort.ts](02-dsa-problems/core/010-insertion-sort.ts) | O(n^2) | O(1) |
-| 011 | **Merge Sort** | [011-merge-sort.ts](02-dsa-problems/core/011-merge-sort.ts) | O(n log n) | O(n) |
-| 012 | **Quick Sort** | [012-quick-sort.ts](02-dsa-problems/core/012-quick-sort.ts) | O(n log n) avg | O(log n) |
-
----
-
-### Easy Problems
-
-18 problems covering fundamental techniques.
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 001 | **Two Sum** | [001-two-sum.ts](02-dsa-problems/easy/001-two-sum.ts) | Hash Map |
-| 002 | **Contains Duplicate** | [002-contains-duplicate.ts](02-dsa-problems/easy/002-contains-duplicate.ts) | Set |
-| 003 | **Valid Anagram** | [003-valid-anagram.ts](02-dsa-problems/easy/003-valid-anagram.ts) | Character Count |
-| 004 | **Valid Palindrome** | [004-valid-palindrome.ts](02-dsa-problems/easy/004-valid-palindrome.ts) | Two Pointers |
-| 005 | **Best Time to Buy and Sell Stock** | [005-best-time-to-buy-and-sell-stock.ts](02-dsa-problems/easy/005-best-time-to-buy-and-sell-stock.ts) | Greedy |
-| 006 | **Valid Parentheses** | [006-valid-parentheses.ts](02-dsa-problems/easy/006-valid-parentheses.ts) | Stack |
-| 007 | **Binary Search** | [007-binary-search.ts](02-dsa-problems/easy/007-binary-search.ts) | Binary Search |
-| 008 | **Reverse Linked List** | [008-reverse-linked-list.ts](02-dsa-problems/easy/008-reverse-linked-list.ts) | Iterative/Recursive |
-| 009 | **Merge Two Sorted Lists** | [009-merge-two-sorted-lists.ts](02-dsa-problems/easy/009-merge-two-sorted-lists.ts) | Two Pointers |
-| 010 | **Linked List Cycle** | [010-linked-list-cycle.ts](02-dsa-problems/easy/010-linked-list-cycle.ts) | Floyd's Cycle Detection |
-| 011 | **Invert Binary Tree** | [011-invert-binary-tree.ts](02-dsa-problems/easy/011-invert-binary-tree.ts) | DFS/BFS |
-| 012 | **Maximum Depth of Binary Tree** | [012-maximum-depth-of-binary-tree.ts](02-dsa-problems/easy/012-maximum-depth-of-binary-tree.ts) | DFS |
-| 013 | **Diameter of Binary Tree** | [013-diameter-of-binary-tree.ts](02-dsa-problems/easy/013-diameter-of-binary-tree.ts) | DFS |
-| 014 | **Balanced Binary Tree** | [014-balanced-binary-tree.ts](02-dsa-problems/easy/014-balanced-binary-tree.ts) | DFS |
-| 015 | **Same Tree** | [015-same-tree.ts](02-dsa-problems/easy/015-same-tree.ts) | DFS |
-| 016 | **Subtree of Another Tree** | [016-subtree-of-another-tree.ts](02-dsa-problems/easy/016-subtree-of-another-tree.ts) | DFS |
-| 017 | **Kth Largest Element in Stream** | [017-kth-largest-element-in-stream.ts](02-dsa-problems/easy/017-kth-largest-element-in-stream.ts) | Min Heap |
-| 018 | **Last Stone Weight** | [018-last-stone-weight.ts](02-dsa-problems/easy/018-last-stone-weight.ts) | Max Heap |
-
----
-
-### Medium Problems
-
-47 problems covering intermediate techniques.
-
-#### Arrays & Hashing (6)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 001 | **Group Anagrams** | [001-group-anagrams.ts](02-dsa-problems/medium/001-group-anagrams.ts) | Hash Map |
-| 002 | **Top K Frequent Elements** | [002-top-k-frequent-elements.ts](02-dsa-problems/medium/002-top-k-frequent-elements.ts) | Heap / Bucket Sort |
-| 003 | **Encode and Decode Strings** | [003-encode-and-decode-strings.ts](02-dsa-problems/medium/003-encode-and-decode-strings.ts) | String Manipulation |
-| 004 | **Product of Array Except Self** | [004-product-of-array-except-self.ts](02-dsa-problems/medium/004-product-of-array-except-self.ts) | Prefix/Suffix |
-| 005 | **Valid Sudoku** | [005-valid-sudoku.ts](02-dsa-problems/medium/005-valid-sudoku.ts) | Hash Set |
-| 006 | **Longest Consecutive Sequence** | [006-longest-consecutive-sequence.ts](02-dsa-problems/medium/006-longest-consecutive-sequence.ts) | Set |
-
-#### Two Pointers (3)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 007 | **Two Sum II** | [007-two-sum-ii-input-array-is-sorted.ts](02-dsa-problems/medium/007-two-sum-ii-input-array-is-sorted.ts) | Two Pointers |
-| 008 | **Three Sum** | [008-three-sum.ts](02-dsa-problems/medium/008-three-sum.ts) | Two Pointers |
-| 009 | **Container with Most Water** | [009-container-with-most-water.ts](02-dsa-problems/medium/009-container-with-most-water.ts) | Two Pointers |
-
-#### Sliding Window (3)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 010 | **Longest Substring Without Repeating Characters** | [010-longest-substring-without-repeating-characters.ts](02-dsa-problems/medium/010-longest-substring-without-repeating-characters.ts) | Sliding Window |
-| 011 | **Longest Repeating Character Replacement** | [011-longest-repeating-character-replacement.ts](02-dsa-problems/medium/011-longest-repeating-character-replacement.ts) | Sliding Window |
-| 012 | **Permutation in String** | [012-permutation-in-string.ts](02-dsa-problems/medium/012-permutation-in-string.ts) | Sliding Window |
-
-#### Stack (4)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 013 | **Min Stack** | [013-min-stack.ts](02-dsa-problems/medium/013-min-stack.ts) | Two-Stack Approach |
-| 014 | **Evaluate Reverse Polish Notation** | [014-evaluate-reverse-polish-notation.ts](02-dsa-problems/medium/014-evaluate-reverse-polish-notation.ts) | Stack |
-| 015 | **Daily Temperatures** | [015-daily-temperatures.ts](02-dsa-problems/medium/015-daily-temperatures.ts) | Monotonic Stack |
-| 016 | **Car Fleet** | [016-car-fleet.ts](02-dsa-problems/medium/016-car-fleet.ts) | Sorting + Stack |
-
-#### Binary Search (5)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 017 | **Search a 2D Matrix** | [017-search-a-2d-matrix.ts](02-dsa-problems/medium/017-search-a-2d-matrix.ts) | Binary Search |
-| 018 | **Koko Eating Bananas** | [018-koko-eating-bananas.ts](02-dsa-problems/medium/018-koko-eating-bananas.ts) | Binary Search on Answer |
-| 019 | **Find Minimum in Rotated Sorted Array** | [019-find-minimum-in-rotated-sorted-array.ts](02-dsa-problems/medium/019-find-minimum-in-rotated-sorted-array.ts) | Binary Search |
-| 020 | **Search in Rotated Sorted Array** | [020-search-in-rotated-sorted-array.ts](02-dsa-problems/medium/020-search-in-rotated-sorted-array.ts) | Binary Search |
-| 021 | **Time-Based Key-Value Store** | [021-time-based-key-value-store.ts](02-dsa-problems/medium/021-time-based-key-value-store.ts) | HashMap + Binary Search |
-
-#### Linked List (6)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 022 | **Reorder List** | [022-reorder-list.ts](02-dsa-problems/medium/022-reorder-list.ts) | Fast/Slow Pointers |
-| 023 | **Remove Nth Node from End** | [023-remove-nth-node-from-end.ts](02-dsa-problems/medium/023-remove-nth-node-from-end.ts) | Two Pointers |
-| 024 | **Copy List with Random Pointer** | [024-copy-list-with-random-pointer.ts](02-dsa-problems/medium/024-copy-list-with-random-pointer.ts) | Hash Map |
-| 025 | **Add Two Numbers** | [025-add-two-numbers.ts](02-dsa-problems/medium/025-add-two-numbers.ts) | Math |
-| 026 | **Find the Duplicate Number** | [026-find-the-duplicate-number.ts](02-dsa-problems/medium/026-find-the-duplicate-number.ts) | Floyd's Cycle Detection |
-| 027 | **LRU Cache** | [027-lru-cache.ts](02-dsa-problems/medium/027-lru-cache.ts) | HashMap + Doubly Linked List |
-
-#### Binary Tree (7)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 028 | **Lowest Common Ancestor of BST** | [028-lowest-common-ancestor-of-bst.ts](02-dsa-problems/medium/028-lowest-common-ancestor-of-bst.ts) | BST Properties |
-| 029 | **Binary Tree Level Order Traversal** | [029-binary-tree-level-order-traversal.ts](02-dsa-problems/medium/029-binary-tree-level-order-traversal.ts) | BFS |
-| 030 | **Binary Tree Right Side View** | [030-binary-tree-right-side-view.ts](02-dsa-problems/medium/030-binary-tree-right-side-view.ts) | BFS/DFS |
-| 031 | **Count Good Nodes in Binary Tree** | [031-count-good-nodes-in-binary-tree.ts](02-dsa-problems/medium/031-count-good-nodes-in-binary-tree.ts) | DFS |
-| 032 | **Validate Binary Search Tree** | [032-validate-binary-search-tree.ts](02-dsa-problems/medium/032-validate-binary-search-tree.ts) | DFS with Bounds |
-| 033 | **Kth Smallest Element in BST** | [033-kth-smallest-element-in-bst.ts](02-dsa-problems/medium/033-kth-smallest-element-in-bst.ts) | Inorder Traversal |
-| 034 | **Construct Binary Tree from Preorder and Inorder** | [034-construct-binary-tree-from-preorder-inorder.ts](02-dsa-problems/medium/034-construct-binary-tree-from-preorder-inorder.ts) | Divide and Conquer |
-
-#### Heap / Priority Queue (4)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 035 | **K Closest Points to Origin** | [035-k-closest-points-to-origin.ts](02-dsa-problems/medium/035-k-closest-points-to-origin.ts) | Max Heap |
-| 036 | **Kth Largest Element in Array** | [036-kth-largest-element-in-array.ts](02-dsa-problems/medium/036-kth-largest-element-in-array.ts) | Quick Select / Heap |
-| 037 | **Task Scheduler** | [037-task-scheduler.ts](02-dsa-problems/medium/037-task-scheduler.ts) | Greedy + Heap |
-| 038 | **Design Twitter** | [038-design-twitter.ts](02-dsa-problems/medium/038-design-twitter.ts) | Heap + Design |
-
-#### Backtracking (9)
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 039 | **Subsets** | [039-subsets.ts](02-dsa-problems/medium/039-subsets.ts) | Pick/Skip Pattern |
-| 040 | **Combination Sum** | [040-combination-sum.ts](02-dsa-problems/medium/040-combination-sum.ts) | Pick/Skip with Reuse |
-| 041 | **Combination Sum II** | [041-combination-sum-ii.ts](02-dsa-problems/medium/041-combination-sum-ii.ts) | Pick/Skip + Dedup |
-| 042 | **Permutations** | [042-permutations.ts](02-dsa-problems/medium/042-permutations.ts) | Backtracking |
-| 043 | **Subsets II** | [043-subsets-ii.ts](02-dsa-problems/medium/043-subsets-ii.ts) | Pick/Skip + Dedup |
-| 044 | **Generate Parentheses** | [044-generate-parentheses.ts](02-dsa-problems/medium/044-generate-parentheses.ts) | Backtracking |
-| 045 | **Word Search** | [045-word-search.ts](02-dsa-problems/medium/045-word-search.ts) | DFS Backtracking |
-| 046 | **Palindrome Partitioning** | [046-palindrome-partitioning.ts](02-dsa-problems/medium/046-palindrome-partitioning.ts) | Backtracking |
-| 047 | **Letter Combinations of Phone Number** | [047-letter-combinations-of-phone-number.ts](02-dsa-problems/medium/047-letter-combinations-of-phone-number.ts) | Backtracking |
-
----
-
-### Hard Problems
-
-11 problems covering advanced techniques.
-
-| # | Problem | File | Technique |
-|---|---------|------|-----------|
-| 001 | **Trapping Rain Water** | [001-trapping-rain-water.ts](02-dsa-problems/hard/001-trapping-rain-water.ts) | Two Pointers / Stack |
-| 002 | **Minimum Window Substring** | [002-minimum-window-substring.ts](02-dsa-problems/hard/002-minimum-window-substring.ts) | Sliding Window |
-| 003 | **Sliding Window Maximum** | [003-sliding-window-maximum.ts](02-dsa-problems/hard/003-sliding-window-maximum.ts) | Monotonic Deque |
-| 004 | **Largest Rectangle in Histogram** | [004-largest-rectangle-in-histogram.ts](02-dsa-problems/hard/004-largest-rectangle-in-histogram.ts) | Monotonic Stack |
-| 005 | **Median of Two Sorted Arrays** | [005-median-of-two-sorted-arrays.ts](02-dsa-problems/hard/005-median-of-two-sorted-arrays.ts) | Binary Search |
-| 006 | **Merge K Sorted Lists** | [006-merge-k-sorted-lists.ts](02-dsa-problems/hard/006-merge-k-sorted-lists.ts) | Min Heap / Divide & Conquer |
-| 007 | **Reverse Nodes in K-Group** | [007-reverse-nodes-in-k-group.ts](02-dsa-problems/hard/007-reverse-nodes-in-k-group.ts) | Linked List Manipulation |
-| 008 | **Binary Tree Maximum Path Sum** | [008-binary-tree-maximum-path-sum.ts](02-dsa-problems/hard/008-binary-tree-maximum-path-sum.ts) | DFS |
-| 009 | **Serialize and Deserialize Binary Tree** | [009-serialize-deserialize-binary-tree.ts](02-dsa-problems/hard/009-serialize-deserialize-binary-tree.ts) | BFS/DFS |
-| 010 | **Find Median from Data Stream** | [010-find-median-from-data-stream.ts](02-dsa-problems/hard/010-find-median-from-data-stream.ts) | Two Heaps |
-| 011 | **N-Queens** | [011-n-queens.ts](02-dsa-problems/hard/011-n-queens.ts) | Backtracking |
-
----
-
-## System Design
-
-16 comprehensive system design documents for real-world applications.
-
-| # | System | File | Category |
-|---|--------|------|----------|
-| 01 | **Todo App** | [01-todo-app.md](05-system-design/01-todo-app.md) | Full-Stack Application |
-| 02 | **Trading App** | [02-trading-app.md](05-system-design/02-trading-app.md) | Financial Systems |
-| 03 | **E2B Sandbox** | [03-e2b-sandbox.md](05-system-design/03-e2b-sandbox.md) | Code Execution |
-| 04 | **Lovable Clone** | [04-lovable-clone.md](05-system-design/04-lovable-clone.md) | AI App Builder |
-| 05 | **Codeforces Clone** | [05-codeforces-clone.md](05-system-design/05-codeforces-clone.md) | Competitive Programming |
-| 06 | **Replit Clone** | [06-replit-clone.md](05-system-design/06-replit-clone.md) | Online IDE |
-| 07 | **Cloudflare Workers Runtime** | [07-cloudflare-workers-runtime.md](05-system-design/07-cloudflare-workers-runtime.md) | Edge Computing |
-| 08 | **Agent Framework** | [08-agent-framework.md](05-system-design/08-agent-framework.md) | AI Infrastructure |
-| 09 | **RL Finetuning** | [09-rl-finetuning.md](05-system-design/09-rl-finetuning.md) | Machine Learning |
-| 10 | **Devin** | [10-devin.md](05-system-design/10-devin.md) | AI Software Engineer |
-| 11 | **Memory Framework** | [11-memory-framework.md](05-system-design/11-memory-framework.md) | AI Memory Systems |
-| 12 | **DEX AMM** | [12-dex-amm.md](05-system-design/12-dex-amm.md) | Web3 / DeFi |
-| 13 | **CEX** | [13-cex.md](05-system-design/13-cex.md) | Web3 / Exchange |
-| 14 | **Wallet** | [14-wallet.md](05-system-design/14-wallet.md) | Web3 / Crypto |
-| 15 | **Prediction Market** | [15-prediction-market.md](05-system-design/15-prediction-market.md) | Web3 / DeFi |
-| 16 | **Staking Escrow Frontend** | [16-staking-escrow-frontend.md](05-system-design/16-staking-escrow-frontend.md) | Web3 / Frontend |
-
----
-
-## System Design Interview
-
-2 interview-focused system design problems with detailed solutions.
-
-| # | Problem | File | Focus Areas |
-|---|---------|------|-------------|
-| 01 | **Design Calendar System** | [01-design-calendar-system.md](08-system-design-interview/01-design-calendar-system.md) | Event scheduling, recurring events, timezone handling |
-| 02 | **Design Google Docs** | [02-design-google-docs.md](08-system-design-interview/02-design-google-docs.md) | Real-time collaboration, OT/CRDT, conflict resolution |
-
----
-
-## Low-Level Design Interview
-
-3 low-level design interview problems with OOP implementations.
-
-| # | Problem | File | Key Concepts |
-|---|---------|------|--------------|
-| 01 | **Design Parking Lot** | [01-design-parking-lot.md](10-low-level-design-interview/01-design-parking-lot.md) | OOP, Strategy pattern, State management |
-| 02 | **Design Notification System** | [02-design-notification-system.md](10-low-level-design-interview/02-design-notification-system.md) | Observer pattern, Template method, Priority queues |
-| 03 | **Design Search Autocomplete** | [03-design-search-autocomplete.md](10-low-level-design-interview/03-design-search-autocomplete.md) | Trie, Caching, Ranking algorithms |
-
----
-
-## System Design Fundamentals
-
-4 core system design concepts with detailed explanations.
-
-Index: [06-system-design-fundamental/README.md](06-system-design-fundamental/README.md)
-
-| # | Topic | File | Description |
-|---|-------|------|-------------|
-| 01 | **SSL/TLS Explained** | [01-ssltls_explained.md](06-system-design-fundamental/01-ssltls_explained.md) | TLS handshake, certificates, encryption |
-| 02 | **Role-Based Access Control (RBAC)** | [02-role_based_access_control_rbac.md](06-system-design-fundamental/02-role_based_access_control_rbac.md) | Roles, permissions, access control models |
-| 03 | **Secrets Management** | [03-secrets_management.md](06-system-design-fundamental/03-secrets_management.md) | Secret lifecycle, dynamic credentials, rotation, tooling |
-| 04 | **SAML Explained** | [04-saml_explained.md](06-system-design-fundamental/04-saml_explained.md) | Enterprise SSO, assertions, bindings, security practices |
-
----
-
-## Database & Distributed Systems
-
-### DDIA - Designing Data-Intensive Applications
-
-Comprehensive notes from Martin Kleppmann's book covering database internals and distributed systems.
-
-#### Part I: Foundations of Data Systems (4 chapters)
-
-| # | Chapter | File | Topics |
-|---|---------|------|--------|
-| 01 | **Reliable, Scalable, and Maintainable Applications** | [01-reliable-scalable-maintainable.md](04-database-basics/ddia/foundations/01-reliable-scalable-maintainable.md) | Reliability, Scalability, Maintainability |
-| 02 | **Data Models and Query Languages** | [02-data-models-query-languages.md](04-database-basics/ddia/foundations/02-data-models-query-languages.md) | Relational, Document, Graph models |
-| 03 | **Storage and Retrieval** | [03-storage-and-retrieval.md](04-database-basics/ddia/foundations/03-storage-and-retrieval.md) | LSM-Trees, B-Trees, Column stores |
-| 04 | **Encoding and Evolution** | [04-encoding-and-evolution.md](04-database-basics/ddia/foundations/04-encoding-and-evolution.md) | JSON, Protobuf, Avro, Schema evolution |
-
-#### Part II: Distributed Data (5 chapters)
-
-| # | Chapter | File | Topics |
-|---|---------|------|--------|
-| 05 | **Replication** | [05-replication.md](04-database-basics/ddia/distributed-data/05-replication.md) | Leader-follower, Multi-leader, Leaderless |
-| 06 | **Partitioning** | [06-partitioning.md](04-database-basics/ddia/distributed-data/06-partitioning.md) | Key range, Hash, Secondary indexes |
-| 07 | **Transactions** | [07-transactions.md](04-database-basics/ddia/distributed-data/07-transactions.md) | ACID, Isolation levels, Serializability |
-| 08 | **The Trouble with Distributed Systems** | [08-trouble-with-distributed-systems.md](04-database-basics/ddia/distributed-data/08-trouble-with-distributed-systems.md) | Failures, Clocks, Byzantine faults |
-| 09 | **Consistency and Consensus** | [09-consistency-and-consensus.md](04-database-basics/ddia/distributed-data/09-consistency-and-consensus.md) | Linearizability, Raft, Zab, 2PC |
-
-#### Part III: Derived Data (3 chapters)
-
-| # | Chapter | File | Topics |
-|---|---------|------|--------|
-| 10 | **Batch Processing** | [10-batch-processing.md](04-database-basics/ddia/derived-data/10-batch-processing.md) | MapReduce, Spark, Dataflow |
-| 11 | **Stream Processing** | [11-stream-processing.md](04-database-basics/ddia/derived-data/11-stream-processing.md) | Kafka, Event sourcing, Stream joins |
-| 12 | **The Future of Data Systems** | [12-future-of-data-systems.md](04-database-basics/ddia/derived-data/12-future-of-data-systems.md) | Data integration, Unbundling |
-
----
+- [Project Conventions](#project-conventions)
+- [Where To Start](#where-to-start)
+
+## Highlights
+
+### DSA
+
+- `02-dsa-problems/core/`: 12 foundational data structures and algorithms
+- `02-dsa-problems/easy/`: 18 easy problems
+- `02-dsa-problems/medium/`: 47 medium problems
+- `02-dsa-problems/hard/`: 11 hard problems
+
+Representative files:
+
+- [001-dynamic-array.ts](02-dsa-problems/core/001-dynamic-array.ts)
+- [001-two-sum.ts](02-dsa-problems/easy/001-two-sum.ts)
+- [001-group-anagrams.ts](02-dsa-problems/medium/001-group-anagrams.ts)
+
+### Design Patterns
+
+- `03-design-patterns/core/`: 10 GoF patterns
+- `03-design-patterns/poeaa/`: 20 enterprise architecture patterns
+- `03-design-patterns/ddd/`: 21 DDD patterns
+- `03-design-patterns/refactoring/`: 61 Fowler refactoring patterns
+
+Representative files:
+
+- [01-factory-method.ts](03-design-patterns/core/01-factory-method.ts)
+- [04-service-layer.ts](03-design-patterns/poeaa/domain-logic/04-service-layer.ts)
+- [06-anticorruption-layer.ts](03-design-patterns/ddd/strategic/06-anticorruption-layer.ts)
+- [01-extract-function.ts](03-design-patterns/refactoring/basic/01-extract-function.ts)
+
+### Architecture And Systems
+
+- `05-system-design/` contains full project blueprints such as:
+  - [01-todo-app.md](05-system-design/01-todo-app.md)
+  - [08-agent-framework.md](05-system-design/08-agent-framework.md)
+  - [12-dex-amm.md](05-system-design/12-dex-amm.md)
+  - [13-cex.md](05-system-design/13-cex.md)
+- `06-system-design-fundamental/` contains focused concept notes such as:
+  - [01-ssltls_explained.md](06-system-design-fundamental/01-ssltls_explained.md)
+  - [05-three_pillars_of_observability.md](06-system-design-fundamental/05-three_pillars_of_observability.md)
+  - [22-service_discovery.md](06-system-design-fundamental/22-service_discovery.md)
+  - [29-service_mesh.md](06-system-design-fundamental/29-service_mesh.md)
+- `04-database-basics/ddia/` contains 12 DDIA notes spanning foundations, distributed data, and derived data
+
+### Interview Prep
+
+- `08-system-design-interview/` contains full interview-style HLD problems:
+  - [01-design-calendar-system.md](08-system-design-interview/01-design-calendar-system.md)
+  - [02-design-google-docs.md](08-system-design-interview/02-design-google-docs.md)
+- `09-low-level-design-interview-basics/` contains baseline LLD prep:
+  - [01-what_is_low_level_design_lld.md](09-low-level-design-interview-basics/01-what_is_low_level_design_lld.md)
+  - [02-lld_vs_hld.md](09-low-level-design-interview-basics/02-lld_vs_hld.md)
+- `10-low-level-design-interview/` contains applied case studies:
+  - [01-design-parking-lot.md](10-low-level-design-interview/01-design-parking-lot.md)
+  - [02-design-notification-system.md](10-low-level-design-interview/02-design-notification-system.md)
+  - [03-design-search-autocomplete.md](10-low-level-design-interview/03-design-search-autocomplete.md)
+  - [03-design-search-autocomplete.ts](10-low-level-design-interview/03-design-search-autocomplete.ts)
+
+## Master Index
+
+### Language Runtime Index
+
+- [01-language-basics.md](01-language-runtime/python/01-language-basics.md)
+
+### DSA Problems Index
+
+#### Core
+
+- [001-dynamic-array.ts](02-dsa-problems/core/001-dynamic-array.ts) - Dynamic Array
+- [002-singly-linked-list.ts](02-dsa-problems/core/002-singly-linked-list.ts) - Singly Linked List
+- [003-double-ended-queue.ts](02-dsa-problems/core/003-double-ended-queue.ts) - Double Ended Queue
+- [004-binary-search-tree.ts](02-dsa-problems/core/004-binary-search-tree.ts) - Binary Search Tree
+- [005-hash-table.ts](02-dsa-problems/core/005-hash-table.ts) - Hash Table
+- [006-heap.ts](02-dsa-problems/core/006-heap.ts) - Heap
+- [007-graph.ts](02-dsa-problems/core/007-graph.ts) - Graph
+- [008-disjoint-set.ts](02-dsa-problems/core/008-disjoint-set.ts) - Disjoint Set
+- [009-segment-tree.ts](02-dsa-problems/core/009-segment-tree.ts) - Segment Tree
+- [010-insertion-sort.ts](02-dsa-problems/core/010-insertion-sort.ts) - Insertion Sort
+- [011-merge-sort.ts](02-dsa-problems/core/011-merge-sort.ts) - Merge Sort
+- [012-quick-sort.ts](02-dsa-problems/core/012-quick-sort.ts) - Quick Sort
+
+#### Easy
+
+- [001-two-sum.ts](02-dsa-problems/easy/001-two-sum.ts) - Two Sum
+- [002-contains-duplicate.ts](02-dsa-problems/easy/002-contains-duplicate.ts) - Contains Duplicate
+- [003-valid-anagram.ts](02-dsa-problems/easy/003-valid-anagram.ts) - Valid Anagram
+- [004-valid-palindrome.ts](02-dsa-problems/easy/004-valid-palindrome.ts) - Valid Palindrome
+- [005-best-time-to-buy-and-sell-stock.ts](02-dsa-problems/easy/005-best-time-to-buy-and-sell-stock.ts) - Best Time To Buy And Sell Stock
+- [006-valid-parentheses.ts](02-dsa-problems/easy/006-valid-parentheses.ts) - Valid Parentheses
+- [007-binary-search.ts](02-dsa-problems/easy/007-binary-search.ts) - Binary Search
+- [008-reverse-linked-list.ts](02-dsa-problems/easy/008-reverse-linked-list.ts) - Reverse Linked List
+- [009-merge-two-sorted-lists.ts](02-dsa-problems/easy/009-merge-two-sorted-lists.ts) - Merge Two Sorted Lists
+- [010-linked-list-cycle.ts](02-dsa-problems/easy/010-linked-list-cycle.ts) - Linked List Cycle
+- [011-invert-binary-tree.ts](02-dsa-problems/easy/011-invert-binary-tree.ts) - Invert Binary Tree
+- [012-maximum-depth-of-binary-tree.ts](02-dsa-problems/easy/012-maximum-depth-of-binary-tree.ts) - Maximum Depth Of Binary Tree
+- [013-diameter-of-binary-tree.ts](02-dsa-problems/easy/013-diameter-of-binary-tree.ts) - Diameter Of Binary Tree
+- [014-balanced-binary-tree.ts](02-dsa-problems/easy/014-balanced-binary-tree.ts) - Balanced Binary Tree
+- [015-same-tree.ts](02-dsa-problems/easy/015-same-tree.ts) - Same Tree
+- [016-subtree-of-another-tree.ts](02-dsa-problems/easy/016-subtree-of-another-tree.ts) - Subtree Of Another Tree
+- [017-kth-largest-element-in-stream.ts](02-dsa-problems/easy/017-kth-largest-element-in-stream.ts) - Kth Largest Element In Stream
+- [018-last-stone-weight.ts](02-dsa-problems/easy/018-last-stone-weight.ts) - Last Stone Weight
+
+#### Medium
+
+- [001-group-anagrams.ts](02-dsa-problems/medium/001-group-anagrams.ts) - Group Anagrams
+- [002-top-k-frequent-elements.ts](02-dsa-problems/medium/002-top-k-frequent-elements.ts) - Top K Frequent Elements
+- [003-encode-and-decode-strings.ts](02-dsa-problems/medium/003-encode-and-decode-strings.ts) - Encode And Decode Strings
+- [004-product-of-array-except-self.ts](02-dsa-problems/medium/004-product-of-array-except-self.ts) - Product Of Array Except Self
+- [005-valid-sudoku.ts](02-dsa-problems/medium/005-valid-sudoku.ts) - Valid Sudoku
+- [006-longest-consecutive-sequence.ts](02-dsa-problems/medium/006-longest-consecutive-sequence.ts) - Longest Consecutive Sequence
+- [007-two-sum-ii-input-array-is-sorted.ts](02-dsa-problems/medium/007-two-sum-ii-input-array-is-sorted.ts) - Two Sum II Input Array Is Sorted
+- [008-three-sum.ts](02-dsa-problems/medium/008-three-sum.ts) - Three Sum
+- [009-container-with-most-water.ts](02-dsa-problems/medium/009-container-with-most-water.ts) - Container With Most Water
+- [010-longest-substring-without-repeating-characters.ts](02-dsa-problems/medium/010-longest-substring-without-repeating-characters.ts) - Longest Substring Without Repeating Characters
+- [011-longest-repeating-character-replacement.ts](02-dsa-problems/medium/011-longest-repeating-character-replacement.ts) - Longest Repeating Character Replacement
+- [012-permutation-in-string.ts](02-dsa-problems/medium/012-permutation-in-string.ts) - Permutation In String
+- [013-min-stack.ts](02-dsa-problems/medium/013-min-stack.ts) - Min Stack
+- [014-evaluate-reverse-polish-notation.ts](02-dsa-problems/medium/014-evaluate-reverse-polish-notation.ts) - Evaluate Reverse Polish Notation
+- [015-daily-temperatures.ts](02-dsa-problems/medium/015-daily-temperatures.ts) - Daily Temperatures
+- [016-car-fleet.ts](02-dsa-problems/medium/016-car-fleet.ts) - Car Fleet
+- [017-search-a-2d-matrix.ts](02-dsa-problems/medium/017-search-a-2d-matrix.ts) - Search A 2D Matrix
+- [018-koko-eating-bananas.ts](02-dsa-problems/medium/018-koko-eating-bananas.ts) - Koko Eating Bananas
+- [019-find-minimum-in-rotated-sorted-array.ts](02-dsa-problems/medium/019-find-minimum-in-rotated-sorted-array.ts) - Find Minimum In Rotated Sorted Array
+- [020-search-in-rotated-sorted-array.ts](02-dsa-problems/medium/020-search-in-rotated-sorted-array.ts) - Search In Rotated Sorted Array
+- [021-time-based-key-value-store.ts](02-dsa-problems/medium/021-time-based-key-value-store.ts) - Time Based Key Value Store
+- [022-reorder-list.ts](02-dsa-problems/medium/022-reorder-list.ts) - Reorder List
+- [023-remove-nth-node-from-end.ts](02-dsa-problems/medium/023-remove-nth-node-from-end.ts) - Remove Nth Node From End
+- [024-copy-list-with-random-pointer.ts](02-dsa-problems/medium/024-copy-list-with-random-pointer.ts) - Copy List With Random Pointer
+- [025-add-two-numbers.ts](02-dsa-problems/medium/025-add-two-numbers.ts) - Add Two Numbers
+- [026-find-the-duplicate-number.ts](02-dsa-problems/medium/026-find-the-duplicate-number.ts) - Find The Duplicate Number
+- [027-lru-cache.ts](02-dsa-problems/medium/027-lru-cache.ts) - LRU Cache
+- [028-lowest-common-ancestor-of-bst.ts](02-dsa-problems/medium/028-lowest-common-ancestor-of-bst.ts) - Lowest Common Ancestor Of BST
+- [029-binary-tree-level-order-traversal.ts](02-dsa-problems/medium/029-binary-tree-level-order-traversal.ts) - Binary Tree Level Order Traversal
+- [030-binary-tree-right-side-view.ts](02-dsa-problems/medium/030-binary-tree-right-side-view.ts) - Binary Tree Right Side View
+- [031-count-good-nodes-in-binary-tree.ts](02-dsa-problems/medium/031-count-good-nodes-in-binary-tree.ts) - Count Good Nodes In Binary Tree
+- [032-validate-binary-search-tree.ts](02-dsa-problems/medium/032-validate-binary-search-tree.ts) - Validate Binary Search Tree
+- [033-kth-smallest-element-in-bst.ts](02-dsa-problems/medium/033-kth-smallest-element-in-bst.ts) - Kth Smallest Element In BST
+- [034-construct-binary-tree-from-preorder-inorder.ts](02-dsa-problems/medium/034-construct-binary-tree-from-preorder-inorder.ts) - Construct Binary Tree From Preorder Inorder
+- [035-k-closest-points-to-origin.ts](02-dsa-problems/medium/035-k-closest-points-to-origin.ts) - K Closest Points To Origin
+- [036-kth-largest-element-in-array.ts](02-dsa-problems/medium/036-kth-largest-element-in-array.ts) - Kth Largest Element In Array
+- [037-task-scheduler.ts](02-dsa-problems/medium/037-task-scheduler.ts) - Task Scheduler
+- [038-design-twitter.ts](02-dsa-problems/medium/038-design-twitter.ts) - Design Twitter
+- [039-subsets.ts](02-dsa-problems/medium/039-subsets.ts) - Subsets
+- [040-combination-sum.ts](02-dsa-problems/medium/040-combination-sum.ts) - Combination Sum
+- [041-combination-sum-ii.ts](02-dsa-problems/medium/041-combination-sum-ii.ts) - Combination Sum II
+- [042-permutations.ts](02-dsa-problems/medium/042-permutations.ts) - Permutations
+- [043-subsets-ii.ts](02-dsa-problems/medium/043-subsets-ii.ts) - Subsets II
+- [044-generate-parentheses.ts](02-dsa-problems/medium/044-generate-parentheses.ts) - Generate Parentheses
+- [045-word-search.ts](02-dsa-problems/medium/045-word-search.ts) - Word Search
+- [046-palindrome-partitioning.ts](02-dsa-problems/medium/046-palindrome-partitioning.ts) - Palindrome Partitioning
+- [047-letter-combinations-of-phone-number.ts](02-dsa-problems/medium/047-letter-combinations-of-phone-number.ts) - Letter Combinations Of Phone Number
+
+#### Hard
+
+- [001-trapping-rain-water.ts](02-dsa-problems/hard/001-trapping-rain-water.ts) - Trapping Rain Water
+- [002-minimum-window-substring.ts](02-dsa-problems/hard/002-minimum-window-substring.ts) - Minimum Window Substring
+- [003-sliding-window-maximum.ts](02-dsa-problems/hard/003-sliding-window-maximum.ts) - Sliding Window Maximum
+- [004-largest-rectangle-in-histogram.ts](02-dsa-problems/hard/004-largest-rectangle-in-histogram.ts) - Largest Rectangle In Histogram
+- [005-median-of-two-sorted-arrays.ts](02-dsa-problems/hard/005-median-of-two-sorted-arrays.ts) - Median Of Two Sorted Arrays
+- [006-merge-k-sorted-lists.ts](02-dsa-problems/hard/006-merge-k-sorted-lists.ts) - Merge K Sorted Lists
+- [007-reverse-nodes-in-k-group.ts](02-dsa-problems/hard/007-reverse-nodes-in-k-group.ts) - Reverse Nodes In K Group
+- [008-binary-tree-maximum-path-sum.ts](02-dsa-problems/hard/008-binary-tree-maximum-path-sum.ts) - Binary Tree Maximum Path Sum
+- [009-serialize-deserialize-binary-tree.ts](02-dsa-problems/hard/009-serialize-deserialize-binary-tree.ts) - Serialize Deserialize Binary Tree
+- [010-find-median-from-data-stream.ts](02-dsa-problems/hard/010-find-median-from-data-stream.ts) - Find Median From Data Stream
+- [011-n-queens.ts](02-dsa-problems/hard/011-n-queens.ts) - N Queens
+
+### Design Patterns Index
+
+#### Core Patterns (GoF)
+
+- [01-factory-method.ts](03-design-patterns/core/01-factory-method.ts) - Factory Method
+- [02-singleton.ts](03-design-patterns/core/02-singleton.ts) - Singleton
+- [03-builder.ts](03-design-patterns/core/03-builder.ts) - Builder
+- [04-prototype.ts](03-design-patterns/core/04-prototype.ts) - Prototype
+- [05-adapter.ts](03-design-patterns/core/05-adapter.ts) - Adapter
+- [06-decorator.ts](03-design-patterns/core/06-decorator.ts) - Decorator
+- [07-facade.ts](03-design-patterns/core/07-facade.ts) - Facade
+- [08-strategy.ts](03-design-patterns/core/08-strategy.ts) - Strategy
+- [09-observer.ts](03-design-patterns/core/09-observer.ts) - Observer
+- [10-state.ts](03-design-patterns/core/10-state.ts) - State
+
+#### PoEAA Base Patterns
+
+- [01-gateway.ts](03-design-patterns/poeaa/base/01-gateway.ts) - Gateway
+- [02-registry.ts](03-design-patterns/poeaa/base/02-registry.ts) - Registry
+- [03-value-object.ts](03-design-patterns/poeaa/base/03-value-object.ts) - Value Object
+
+#### PoEAA Domain Logic Patterns
+
+- [01-transaction-script.ts](03-design-patterns/poeaa/domain-logic/01-transaction-script.ts) - Transaction Script
+- [02-table-module.ts](03-design-patterns/poeaa/domain-logic/02-table-module.ts) - Table Module
+- [03-domain-model.ts](03-design-patterns/poeaa/domain-logic/03-domain-model.ts) - Domain Model
+- [04-service-layer.ts](03-design-patterns/poeaa/domain-logic/04-service-layer.ts) - Service Layer
+
+#### PoEAA Data Source Patterns
+
+- [01-table-data-gateway.ts](03-design-patterns/poeaa/data-source/01-table-data-gateway.ts) - Table Data Gateway
+- [02-row-data-gateway.ts](03-design-patterns/poeaa/data-source/02-row-data-gateway.ts) - Row Data Gateway
+- [03-active-record.ts](03-design-patterns/poeaa/data-source/03-active-record.ts) - Active Record
+- [04-data-mapper.ts](03-design-patterns/poeaa/data-source/04-data-mapper.ts) - Data Mapper
+
+#### PoEAA Object-Relational Patterns
+
+- [01-identity-map.ts](03-design-patterns/poeaa/object-relational/01-identity-map.ts) - Identity Map
+- [02-lazy-load.ts](03-design-patterns/poeaa/object-relational/02-lazy-load.ts) - Lazy Load
+- [03-unit-of-work.ts](03-design-patterns/poeaa/object-relational/03-unit-of-work.ts) - Unit Of Work
+- [04-repository.ts](03-design-patterns/poeaa/object-relational/04-repository.ts) - Repository
+
+#### PoEAA Web Presentation Patterns
+
+- [01-page-controller.ts](03-design-patterns/poeaa/web-presentation/01-page-controller.ts) - Page Controller
+- [02-front-controller.ts](03-design-patterns/poeaa/web-presentation/02-front-controller.ts) - Front Controller
+- [03-mvc.ts](03-design-patterns/poeaa/web-presentation/03-mvc.ts) - MVC
+
+#### PoEAA Distribution Patterns
+
+- [01-dto.ts](03-design-patterns/poeaa/distribution/01-dto.ts) - DTO
+- [02-remote-facade.ts](03-design-patterns/poeaa/distribution/02-remote-facade.ts) - Remote Facade
+
+#### DDD Building Blocks
+
+- [01-entity.ts](03-design-patterns/ddd/building-blocks/01-entity.ts) - Entity
+- [02-value-object.ts](03-design-patterns/ddd/building-blocks/02-value-object.ts) - Value Object
+- [03-aggregate.ts](03-design-patterns/ddd/building-blocks/03-aggregate.ts) - Aggregate
+- [04-domain-event.ts](03-design-patterns/ddd/building-blocks/04-domain-event.ts) - Domain Event
+- [05-domain-service.ts](03-design-patterns/ddd/building-blocks/05-domain-service.ts) - Domain Service
+- [06-repository.ts](03-design-patterns/ddd/building-blocks/06-repository.ts) - Repository
+- [07-factory.ts](03-design-patterns/ddd/building-blocks/07-factory.ts) - Factory
+- [08-module.ts](03-design-patterns/ddd/building-blocks/08-module.ts) - Module
+
+#### DDD Strategic Design
+
+- [01-bounded-context.ts](03-design-patterns/ddd/strategic/01-bounded-context.ts) - Bounded Context
+- [02-context-map.ts](03-design-patterns/ddd/strategic/02-context-map.ts) - Context Map
+- [03-shared-kernel.ts](03-design-patterns/ddd/strategic/03-shared-kernel.ts) - Shared Kernel
+- [04-customer-supplier.ts](03-design-patterns/ddd/strategic/04-customer-supplier.ts) - Customer Supplier
+- [05-conformist.ts](03-design-patterns/ddd/strategic/05-conformist.ts) - Conformist
+- [06-anticorruption-layer.ts](03-design-patterns/ddd/strategic/06-anticorruption-layer.ts) - Anticorruption Layer
+- [07-open-host-service.ts](03-design-patterns/ddd/strategic/07-open-host-service.ts) - Open Host Service
+- [08-published-language.ts](03-design-patterns/ddd/strategic/08-published-language.ts) - Published Language
+
+#### DDD Supple Design
+
+- [01-intention-revealing-interface.ts](03-design-patterns/ddd/supple-design/01-intention-revealing-interface.ts) - Intention Revealing Interface
+- [02-side-effect-free-functions.ts](03-design-patterns/ddd/supple-design/02-side-effect-free-functions.ts) - Side Effect Free Functions
+- [03-assertions.ts](03-design-patterns/ddd/supple-design/03-assertions.ts) - Assertions
+- [04-standalone-classes.ts](03-design-patterns/ddd/supple-design/04-standalone-classes.ts) - Standalone Classes
+- [05-specification.ts](03-design-patterns/ddd/supple-design/05-specification.ts) - Specification
+
+#### Refactoring Basic
+
+- [01-extract-function.ts](03-design-patterns/refactoring/basic/01-extract-function.ts) - Extract Function
+- [02-inline-function.ts](03-design-patterns/refactoring/basic/02-inline-function.ts) - Inline Function
+- [03-extract-variable.ts](03-design-patterns/refactoring/basic/03-extract-variable.ts) - Extract Variable
+- [04-inline-variable.ts](03-design-patterns/refactoring/basic/04-inline-variable.ts) - Inline Variable
+- [05-change-function-declaration.ts](03-design-patterns/refactoring/basic/05-change-function-declaration.ts) - Change Function Declaration
+- [06-encapsulate-variable.ts](03-design-patterns/refactoring/basic/06-encapsulate-variable.ts) - Encapsulate Variable
+- [07-rename-variable.ts](03-design-patterns/refactoring/basic/07-rename-variable.ts) - Rename Variable
+- [08-introduce-parameter-object.ts](03-design-patterns/refactoring/basic/08-introduce-parameter-object.ts) - Introduce Parameter Object
+- [09-combine-functions-into-class.ts](03-design-patterns/refactoring/basic/09-combine-functions-into-class.ts) - Combine Functions Into Class
+- [10-combine-functions-into-transform.ts](03-design-patterns/refactoring/basic/10-combine-functions-into-transform.ts) - Combine Functions Into Transform
+- [11-split-phase.ts](03-design-patterns/refactoring/basic/11-split-phase.ts) - Split Phase
+
+#### Refactoring Encapsulation
+
+- [01-encapsulate-record.ts](03-design-patterns/refactoring/encapsulation/01-encapsulate-record.ts) - Encapsulate Record
+- [02-encapsulate-collection.ts](03-design-patterns/refactoring/encapsulation/02-encapsulate-collection.ts) - Encapsulate Collection
+- [03-replace-primitive-with-object.ts](03-design-patterns/refactoring/encapsulation/03-replace-primitive-with-object.ts) - Replace Primitive With Object
+- [04-replace-temp-with-query.ts](03-design-patterns/refactoring/encapsulation/04-replace-temp-with-query.ts) - Replace Temp With Query
+- [05-extract-class.ts](03-design-patterns/refactoring/encapsulation/05-extract-class.ts) - Extract Class
+- [06-inline-class.ts](03-design-patterns/refactoring/encapsulation/06-inline-class.ts) - Inline Class
+- [07-hide-delegate.ts](03-design-patterns/refactoring/encapsulation/07-hide-delegate.ts) - Hide Delegate
+- [08-remove-middle-man.ts](03-design-patterns/refactoring/encapsulation/08-remove-middle-man.ts) - Remove Middle Man
+- [09-substitute-algorithm.ts](03-design-patterns/refactoring/encapsulation/09-substitute-algorithm.ts) - Substitute Algorithm
+
+#### Refactoring Moving Features
+
+- [01-move-function.ts](03-design-patterns/refactoring/moving-features/01-move-function.ts) - Move Function
+- [02-move-field.ts](03-design-patterns/refactoring/moving-features/02-move-field.ts) - Move Field
+- [03-move-statements-into-function.ts](03-design-patterns/refactoring/moving-features/03-move-statements-into-function.ts) - Move Statements Into Function
+- [04-move-statements-to-callers.ts](03-design-patterns/refactoring/moving-features/04-move-statements-to-callers.ts) - Move Statements To Callers
+- [05-replace-inline-code-with-function-call.ts](03-design-patterns/refactoring/moving-features/05-replace-inline-code-with-function-call.ts) - Replace Inline Code With Function Call
+- [06-slide-statements.ts](03-design-patterns/refactoring/moving-features/06-slide-statements.ts) - Slide Statements
+- [07-split-loop.ts](03-design-patterns/refactoring/moving-features/07-split-loop.ts) - Split Loop
+- [08-replace-loop-with-pipeline.ts](03-design-patterns/refactoring/moving-features/08-replace-loop-with-pipeline.ts) - Replace Loop With Pipeline
+- [09-remove-dead-code.ts](03-design-patterns/refactoring/moving-features/09-remove-dead-code.ts) - Remove Dead Code
+
+#### Refactoring Organizing Data
+
+- [01-split-variable.ts](03-design-patterns/refactoring/organizing-data/01-split-variable.ts) - Split Variable
+- [02-rename-field.ts](03-design-patterns/refactoring/organizing-data/02-rename-field.ts) - Rename Field
+- [03-replace-derived-variable-with-query.ts](03-design-patterns/refactoring/organizing-data/03-replace-derived-variable-with-query.ts) - Replace Derived Variable With Query
+- [04-change-reference-to-value.ts](03-design-patterns/refactoring/organizing-data/04-change-reference-to-value.ts) - Change Reference To Value
+- [05-change-value-to-reference.ts](03-design-patterns/refactoring/organizing-data/05-change-value-to-reference.ts) - Change Value To Reference
+
+#### Refactoring Simplifying Conditional Logic
+
+- [01-decompose-conditional.ts](03-design-patterns/refactoring/simplifying-conditional/01-decompose-conditional.ts) - Decompose Conditional
+- [02-consolidate-conditional-expression.ts](03-design-patterns/refactoring/simplifying-conditional/02-consolidate-conditional-expression.ts) - Consolidate Conditional Expression
+- [03-replace-nested-conditional-with-guard-clauses.ts](03-design-patterns/refactoring/simplifying-conditional/03-replace-nested-conditional-with-guard-clauses.ts) - Replace Nested Conditional With Guard Clauses
+- [04-replace-conditional-with-polymorphism.ts](03-design-patterns/refactoring/simplifying-conditional/04-replace-conditional-with-polymorphism.ts) - Replace Conditional With Polymorphism
+- [05-introduce-special-case.ts](03-design-patterns/refactoring/simplifying-conditional/05-introduce-special-case.ts) - Introduce Special Case
+- [06-introduce-assertion.ts](03-design-patterns/refactoring/simplifying-conditional/06-introduce-assertion.ts) - Introduce Assertion
+
+#### Refactoring APIs
+
+- [01-separate-query-from-modifier.ts](03-design-patterns/refactoring/refactoring-apis/01-separate-query-from-modifier.ts) - Separate Query From Modifier
+- [02-parameterize-function.ts](03-design-patterns/refactoring/refactoring-apis/02-parameterize-function.ts) - Parameterize Function
+- [03-remove-flag-argument.ts](03-design-patterns/refactoring/refactoring-apis/03-remove-flag-argument.ts) - Remove Flag Argument
+- [04-preserve-whole-object.ts](03-design-patterns/refactoring/refactoring-apis/04-preserve-whole-object.ts) - Preserve Whole Object
+- [05-replace-parameter-with-query.ts](03-design-patterns/refactoring/refactoring-apis/05-replace-parameter-with-query.ts) - Replace Parameter With Query
+- [06-replace-query-with-parameter.ts](03-design-patterns/refactoring/refactoring-apis/06-replace-query-with-parameter.ts) - Replace Query With Parameter
+- [07-remove-setting-method.ts](03-design-patterns/refactoring/refactoring-apis/07-remove-setting-method.ts) - Remove Setting Method
+- [08-replace-constructor-with-factory-function.ts](03-design-patterns/refactoring/refactoring-apis/08-replace-constructor-with-factory-function.ts) - Replace Constructor With Factory Function
+- [09-replace-function-with-command.ts](03-design-patterns/refactoring/refactoring-apis/09-replace-function-with-command.ts) - Replace Function With Command
+- [10-replace-command-with-function.ts](03-design-patterns/refactoring/refactoring-apis/10-replace-command-with-function.ts) - Replace Command With Function
+
+#### Refactoring Inheritance
+
+- [01-pull-up-method.ts](03-design-patterns/refactoring/inheritance/01-pull-up-method.ts) - Pull Up Method
+- [02-pull-up-field.ts](03-design-patterns/refactoring/inheritance/02-pull-up-field.ts) - Pull Up Field
+- [03-pull-up-constructor-body.ts](03-design-patterns/refactoring/inheritance/03-pull-up-constructor-body.ts) - Pull Up Constructor Body
+- [04-push-down-method.ts](03-design-patterns/refactoring/inheritance/04-push-down-method.ts) - Push Down Method
+- [05-push-down-field.ts](03-design-patterns/refactoring/inheritance/05-push-down-field.ts) - Push Down Field
+- [06-replace-type-code-with-subclasses.ts](03-design-patterns/refactoring/inheritance/06-replace-type-code-with-subclasses.ts) - Replace Type Code With Subclasses
+- [07-remove-subclass.ts](03-design-patterns/refactoring/inheritance/07-remove-subclass.ts) - Remove Subclass
+- [08-extract-superclass.ts](03-design-patterns/refactoring/inheritance/08-extract-superclass.ts) - Extract Superclass
+- [09-collapse-hierarchy.ts](03-design-patterns/refactoring/inheritance/09-collapse-hierarchy.ts) - Collapse Hierarchy
+- [10-replace-subclass-with-delegate.ts](03-design-patterns/refactoring/inheritance/10-replace-subclass-with-delegate.ts) - Replace Subclass With Delegate
+- [11-replace-superclass-with-delegate.ts](03-design-patterns/refactoring/inheritance/11-replace-superclass-with-delegate.ts) - Replace Superclass With Delegate
+
+### Database And Distributed Systems Index
+
+#### DDIA Foundations
+
+- [01-reliable-scalable-maintainable.md](04-database-basics/ddia/foundations/01-reliable-scalable-maintainable.md)
+- [02-data-models-query-languages.md](04-database-basics/ddia/foundations/02-data-models-query-languages.md)
+- [03-storage-and-retrieval.md](04-database-basics/ddia/foundations/03-storage-and-retrieval.md)
+- [04-encoding-and-evolution.md](04-database-basics/ddia/foundations/04-encoding-and-evolution.md)
+
+#### DDIA Distributed Data
+
+- [05-replication.md](04-database-basics/ddia/distributed-data/05-replication.md)
+- [06-partitioning.md](04-database-basics/ddia/distributed-data/06-partitioning.md)
+- [07-transactions.md](04-database-basics/ddia/distributed-data/07-transactions.md)
+- [08-trouble-with-distributed-systems.md](04-database-basics/ddia/distributed-data/08-trouble-with-distributed-systems.md)
+- [09-consistency-and-consensus.md](04-database-basics/ddia/distributed-data/09-consistency-and-consensus.md)
+
+#### DDIA Derived Data
+
+- [10-batch-processing.md](04-database-basics/ddia/derived-data/10-batch-processing.md)
+- [11-stream-processing.md](04-database-basics/ddia/derived-data/11-stream-processing.md)
+- [12-future-of-data-systems.md](04-database-basics/ddia/derived-data/12-future-of-data-systems.md)
+
+### System Design Blueprints Index
+
+- [01-todo-app.md](05-system-design/01-todo-app.md)
+- [02-trading-app.md](05-system-design/02-trading-app.md)
+- [03-e2b-sandbox.md](05-system-design/03-e2b-sandbox.md)
+- [04-lovable-clone.md](05-system-design/04-lovable-clone.md)
+- [05-codeforces-clone.md](05-system-design/05-codeforces-clone.md)
+- [06-replit-clone.md](05-system-design/06-replit-clone.md)
+- [07-cloudflare-workers-runtime.md](05-system-design/07-cloudflare-workers-runtime.md)
+- [08-agent-framework.md](05-system-design/08-agent-framework.md)
+- [09-rl-finetuning.md](05-system-design/09-rl-finetuning.md)
+- [10-devin.md](05-system-design/10-devin.md)
+- [11-memory-framework.md](05-system-design/11-memory-framework.md)
+- [12-dex-amm.md](05-system-design/12-dex-amm.md)
+- [13-cex.md](05-system-design/13-cex.md)
+- [14-wallet.md](05-system-design/14-wallet.md)
+- [15-prediction-market.md](05-system-design/15-prediction-market.md)
+- [16-staking-escrow-frontend.md](05-system-design/16-staking-escrow-frontend.md)
+
+### System Design Fundamentals Index
+
+- [README.md](06-system-design-fundamental/README.md)
+- [01-ssltls_explained.md](06-system-design-fundamental/01-ssltls_explained.md)
+- [02-role_based_access_control_rbac.md](06-system-design-fundamental/02-role_based_access_control_rbac.md)
+- [03-secrets_management.md](06-system-design-fundamental/03-secrets_management.md)
+- [04-saml_explained.md](06-system-design-fundamental/04-saml_explained.md)
+- [05-three_pillars_of_observability.md](06-system-design-fundamental/05-three_pillars_of_observability.md)
+- [06-log_aggregation.md](06-system-design-fundamental/06-log_aggregation.md)
+- [07-logging_best_practices.md](06-system-design-fundamental/07-logging_best_practices.md)
+- [08-correlation_ids.md](06-system-design-fundamental/08-correlation_ids.md)
+- [09-metrics_instrumentation.md](06-system-design-fundamental/09-metrics_instrumentation.md)
+- [10-alert_monitoring.md](06-system-design-fundamental/10-alert_monitoring.md)
+- [11-dashboards_runbooks.md](06-system-design-fundamental/11-dashboards_runbooks.md)
+- [12-distributed_tracing.md](06-system-design-fundamental/12-distributed_tracing.md)
+- [13-batch_vs_stream_processing.md](06-system-design-fundamental/13-batch_vs_stream_processing.md)
+- [14-mapreduce.md](06-system-design-fundamental/14-mapreduce.md)
+- [15-etl_pipelines.md](06-system-design-fundamental/15-etl_pipelines.md)
+- [16-data_lakes.md](06-system-design-fundamental/16-data_lakes.md)
+- [17-data_warehousing.md](06-system-design-fundamental/17-data_warehousing.md)
+- [18-data_lakehouse.md](06-system-design-fundamental/18-data_lakehouse.md)
+- [19-lambda_architecture.md](06-system-design-fundamental/19-lambda_architecture.md)
+- [20-kappa_architecture.md](06-system-design-fundamental/20-kappa_architecture.md)
+- [21-streaming_engines.md](06-system-design-fundamental/21-streaming_engines.md)
+- [22-service_discovery.md](06-system-design-fundamental/22-service_discovery.md)
+- [23-api_gateway_pattern.md](06-system-design-fundamental/23-api_gateway_pattern.md)
+- [24-backend_for_frontend_bff.md](06-system-design-fundamental/24-backend_for_frontend_bff.md)
+- [25-sidecar_pattern.md](06-system-design-fundamental/25-sidecar_pattern.md)
+- [26-circuit_breaker_pattern.md](06-system-design-fundamental/26-circuit_breaker_pattern.md)
+- [27-bulkhead_pattern.md](06-system-design-fundamental/27-bulkhead_pattern.md)
+- [28-strangler_fig_pattern.md](06-system-design-fundamental/28-strangler_fig_pattern.md)
+- [29-service_mesh.md](06-system-design-fundamental/29-service_mesh.md)
+
+### System Design Interview Basics Index
+
+- [01-introduction_to_system_design_interviews.md](07-system-design-interview-basics/01-introduction_to_system_design_interviews.md)
+
+### System Design Interview Index
+
+- [01-design-calendar-system.md](08-system-design-interview/01-design-calendar-system.md)
+- [02-design-google-docs.md](08-system-design-interview/02-design-google-docs.md)
+
+### Low-Level Design Interview Basics Index
+
+- [01-what_is_low_level_design_lld.md](09-low-level-design-interview-basics/01-what_is_low_level_design_lld.md)
+- [02-lld_vs_hld.md](09-low-level-design-interview-basics/02-lld_vs_hld.md)
+
+### Low-Level Design Interview Index
+
+- [01-design-parking-lot.md](10-low-level-design-interview/01-design-parking-lot.md)
+- [02-design-notification-system.md](10-low-level-design-interview/02-design-notification-system.md)
+- [03-design-search-autocomplete.md](10-low-level-design-interview/03-design-search-autocomplete.md)
+- [03-design-search-autocomplete.ts](10-low-level-design-interview/03-design-search-autocomplete.ts)
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 20+
-- npm or yarn
+- Node.js 20+ recommended
+- `npm` available locally
 
-### Installation
+### Install
 
 ```bash
-# Clone the repository
-git clone https://github.com/jogi47/software-engineering-masterclass.git
-cd software-engineering-masterclass
-
-# Install dependencies
 npm install
 ```
 
-### Running Examples
+### Run TypeScript Files Directly
 
 ```bash
-# Run any TypeScript file directly
-npx ts-node <path-to-file>
-
-# Examples:
 npx ts-node 03-design-patterns/core/01-factory-method.ts
 npx ts-node 02-dsa-problems/medium/001-group-anagrams.ts
-npx ts-node 02-dsa-problems/core/006-heap.ts
+npx ts-node 02-dsa-problems/core/001-dynamic-array.ts
+npx ts-node 10-low-level-design-interview/03-design-search-autocomplete.ts
+```
 
-# Type check
+### Type Check
+
+```bash
 npx tsc --noEmit
 ```
 
----
+## Project Conventions
 
-## Quick Reference
+- TypeScript is configured with `strict: true`, `target: ES2020`, and `module: CommonJS`
+- DSA files use 3-digit numeric prefixes such as `001-two-sum.ts`
+- Design pattern and project documents use 2-digit prefixes such as `01-factory-method.ts` and `01-todo-app.md`
+- Most Markdown folders use ASCII diagrams and structured sections instead of loose notes
+- `factory/` folders contain source stubs or raw material and should generally not be edited directly
 
-### Problem Categories by Technique
+## Where To Start
 
-| Technique | Problems |
-|-----------|----------|
-| **Hash Map** | Two Sum, Group Anagrams, LRU Cache |
-| **Two Pointers** | Valid Palindrome, Three Sum, Container with Most Water |
-| **Sliding Window** | Longest Substring Without Repeating, Minimum Window Substring |
-| **Binary Search** | Search in Rotated Array, Koko Eating Bananas, Median of Two Arrays |
-| **Stack** | Valid Parentheses, Daily Temperatures, Largest Rectangle |
-| **Monotonic Stack/Deque** | Daily Temperatures, Sliding Window Maximum |
-| **Heap** | Top K Frequent, Find Median, Merge K Sorted Lists |
-| **Backtracking** | Subsets, Permutations, N-Queens, Word Search |
-| **DFS/BFS** | Binary Tree problems, Graph traversal |
-| **Floyd's Cycle Detection** | Linked List Cycle, Find Duplicate Number |
-
-### Pattern Categories
-
-| Category | Count | Source |
-|----------|-------|--------|
-| GoF Patterns | 10 | Design Patterns (Gang of Four) |
-| PoEAA Patterns | 20 | Patterns of Enterprise Application Architecture |
-| DDD Patterns | 21 | Domain-Driven Design (Eric Evans) |
-| Refactoring Patterns | 61 | Refactoring (Martin Fowler, 2nd Ed) |
-
-### Interview Preparation
-
-| Category | Count | Description |
-|----------|-------|-------------|
-| System Design Interview | 2 | Large-scale system design problems |
-| LLD Interview | 3 | Object-oriented design problems |
-| System Design Fundamentals | 2 | Core concepts (security, access control) |
-
----
-
-## License
-
-MIT
-
----
-
-<p align="center">
-  <sub>Built for learning and reference</sub>
-</p>
+- If you want coding practice, start with [02-dsa-problems](02-dsa-problems/)
+- If you want reusable engineering patterns, start with [03-design-patterns](03-design-patterns/)
+- If you want architecture depth, read [06-system-design-fundamental](06-system-design-fundamental/) before jumping into [05-system-design](05-system-design/)
+- If you are preparing for interviews, use `07` through `10` in order from basics to case studies

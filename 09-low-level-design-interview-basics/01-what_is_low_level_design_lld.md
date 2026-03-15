@@ -2,6 +2,29 @@
 
 Low-level design matters in interviews because it shows whether you can turn a vague requirement into clean classes, interfaces, and code boundaries.
 
+---
+
+## On this page
+
+- [1. Introduction](#1-introduction)
+- [2. Why It Matters in Interviews](#2-why-it-matters-in-interviews)
+- [3. Core Breakdown](#3-core-breakdown)
+  - [3.1 What LLD Actually Covers](#31-what-lld-actually-covers)
+  - [3.2 Core Building Blocks](#32-core-building-blocks)
+  - [3.3 Classes and Responsibilities](#33-classes-and-responsibilities)
+  - [3.4 Interfaces and Abstractions](#34-interfaces-and-abstractions)
+  - [3.5 Relationships Between Objects](#35-relationships-between-objects)
+  - [3.6 Method Design](#36-method-design)
+  - [3.7 Patterns in LLD](#37-patterns-in-lld)
+- [4. Practical Interview Framing](#4-practical-interview-framing)
+- [5. Examples or Scenarios](#5-examples-or-scenarios)
+- [6. Common Mistakes](#6-common-mistakes)
+- [7. Summary Checklist](#7-summary-checklist)
+- [8. Quiz](#8-quiz)
+- [9. Quick Interview Checklist](#9-quick-interview-checklist)
+
+---
+
 ## 1. Introduction
 
 Low-Level Design (LLD) is the step between a broad system idea and concrete code structure.
@@ -287,3 +310,23 @@ Because it usually gives better flexibility and lower coupling unless the inheri
 
 Answer:
 Clear responsibility boundaries with simple, explainable abstractions.
+
+## 9. Quick Interview Checklist
+
+```text
+Modeling:
+  [ ] I identify core entities before writing classes
+  [ ] I keep each class focused on one main responsibility
+
+Abstractions:
+  [ ] I add interfaces only where variation or substitution is real
+  [ ] I justify patterns in terms of the problem they solve
+
+Boundaries:
+  [ ] I keep HLD concerns out of an LLD discussion unless asked
+  [ ] I prefer simple, explainable relationships over clever hierarchies
+
+Communication:
+  [ ] I can explain the design in plain language
+  [ ] I can defend trade-offs around extensibility vs simplicity
+```

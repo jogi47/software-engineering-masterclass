@@ -2,6 +2,27 @@
 
 This topic matters in interviews because many weak candidates mix high-level architecture decisions with low-level class design and end up answering the wrong question.
 
+---
+
+## On this page
+
+- [1. Introduction](#1-introduction)
+- [2. Why It Matters in Interviews](#2-why-it-matters-in-interviews)
+- [3. Core Breakdown](#3-core-breakdown)
+  - [3.1 What HLD Focuses On](#31-what-hld-focuses-on)
+  - [3.2 What LLD Focuses On](#32-what-lld-focuses-on)
+  - [3.3 HLD vs LLD Side by Side](#33-hld-vs-lld-side-by-side)
+  - [3.4 Example Using the Same Product](#34-example-using-the-same-product)
+  - [3.5 How They Connect](#35-how-they-connect)
+- [4. Practical Interview Framing](#4-practical-interview-framing)
+- [5. Examples or Scenarios](#5-examples-or-scenarios)
+- [6. Common Mistakes](#6-common-mistakes)
+- [7. Summary Checklist](#7-summary-checklist)
+- [8. Quiz](#8-quiz)
+- [9. Quick Interview Checklist](#9-quick-interview-checklist)
+
+---
+
 ## 1. Introduction
 
 High-Level Design (HLD) and Low-Level Design (LLD) solve different layers of the same problem.
@@ -273,3 +294,21 @@ Identify the main entities, responsibilities, and relationships inside the modul
 
 Answer:
 HLD defines the major system structure, and LLD defines how one part of that structure is implemented internally.
+
+## 9. Quick Interview Checklist
+
+```text
+Abstraction Level:
+  [ ] I can tell whether the prompt is asking for HLD or LLD
+  [ ] I stay at that level unless the interviewer asks me to zoom
+
+HLD Signals:
+  [ ] I discuss services, storage, scale, and reliability when the problem is architectural
+
+LLD Signals:
+  [ ] I discuss classes, interfaces, responsibilities, and relationships when the problem is implementation-focused
+
+Communication:
+  [ ] I can explain the difference using the same product at two different zoom levels
+  [ ] I can correct myself quickly if I start answering at the wrong abstraction level
+```

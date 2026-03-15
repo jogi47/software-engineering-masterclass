@@ -1,7 +1,7 @@
 {
   "name": "software-engineering-masterclass",
   "version": "1.0.0",
-  "description": "DSA practice problems in TypeScript",
+  "description": "Learning repository for algorithms, design patterns, system design, database fundamentals, and interview preparation",
   "scripts": {
     "core": "ts-node 02-dsa-problems/core/",
     "easy": "ts-node 02-dsa-problems/easy/",

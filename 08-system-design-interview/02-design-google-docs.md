@@ -37,6 +37,7 @@ In this chapter, we will explore the **high-level design of a real-time collabor
   - [6.4 Document Storage and Rich Text](#64-document-storage-and-rich-text)
   - [6.5 Scaling Collaboration Sessions](#65-scaling-collaboration-sessions)
 - [Quiz](#quiz)
+- [Closing Summary](#closing-summary)
 
 ---
 
@@ -1201,3 +1202,42 @@ C) The entire document is replaced with the server version
 D) The user must manually resolve conflicts
 
 **Answer: B** - The sync manager transforms queued offline operations against any operations that happened on the server during the offline period, then sends the transformed operations.
+
+---
+
+# Closing Summary
+
+### Key Takeaways
+
+- Real-time collaborative editing is mainly a conflict-resolution and synchronization problem, not just a storage problem.
+- A strong interview answer should separate document metadata, document content, operation history, and live collaboration state.
+- The hardest part is maintaining convergence under concurrent edits while still supporting performance, offline work, and version history.
+
+### Major Trade-Offs
+
+- **OT vs CRDT:** OT can be more space-efficient and practical with a central coordinator, while CRDTs can offer better peer-to-peer and offline properties at higher complexity or memory cost.
+- **Snapshots vs full replay:** Snapshots reduce recovery cost, but they add background compaction and storage-management overhead.
+- **Sticky coordination vs distributed coordination:** Routing a document session to one collaboration server simplifies operation ordering, but hot documents need careful scaling strategy.
+
+### Likely Interviewer Follow-Ups
+
+- When would you choose CRDTs over OT?
+- How would you handle a document with hundreds of simultaneous editors?
+- How would comments, suggestions, or access-control changes fit into the operation model?
+- How would you prevent one collaboration server from becoming a bottleneck?
+
+### Quick Review Checklist
+
+```text
+Requirements:
+  [ ] I can explain the need for real-time editing, presence, offline sync, and version history
+
+Architecture:
+  [ ] I can justify the collaboration server, operation log, and snapshot model
+
+Conflict Resolution:
+  [ ] I can explain the role of OT or CRDTs clearly enough for an interview
+
+Scalability:
+  [ ] I can discuss hot documents, sticky routing, and session-state pressure
+```

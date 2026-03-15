@@ -36,6 +36,7 @@ In this chapter, we will explore the **high-level design of a calendar system**.
   - [6.5 Scaling Calendar Reads](#65-scaling-calendar-reads)
   - [6.6 Event Synchronization](#66-event-synchronization)
 - [Quiz](#quiz)
+- [Closing Summary](#closing-summary)
 
 ---
 
@@ -1265,3 +1266,43 @@ C) Materialized views
 D) Graph database for relationship queries
 
 **Answer: B** - Caching free/busy results in Redis with invalidation on event changes provides O(1) lookups for frequently queried users while keeping data fresh.
+
+---
+
+# Closing Summary
+
+### Key Takeaways
+
+- Calendar systems look simple at the UI layer but become complex around recurrence, time zones, reminders, and synchronization.
+- A strong interview answer starts with clear scope and only then moves into recurrence modeling, free/busy queries, reminder delivery, and scaling strategy.
+- The most important data-modeling decision is to store recurring events as rules plus exceptions rather than expanding everything eagerly.
+
+### Major Trade-Offs
+
+- **Pattern storage vs expanded instances:** Pattern-based storage is compact and flexible, but recurring-query logic becomes more complex.
+- **Strong consistency vs availability:** Organizer-facing writes need predictable visibility, but some secondary reads can tolerate short staleness.
+- **Precomputation vs on-demand computation:** Free/busy and reminder-heavy workloads benefit from caching or precomputation, but invalidation becomes critical.
+
+### Likely Interviewer Follow-Ups
+
+- How would you shard calendars and events at very large scale?
+- How would you avoid duplicate or missed reminders?
+- How would you handle organizer and attendee edits racing with each other?
+- How would you support offline edits and multi-device sync?
+
+### Quick Review Checklist
+
+```text
+Requirements:
+  [ ] I can explain the core scope and out-of-scope choices clearly
+
+Modeling:
+  [ ] I can justify recurring-event patterns plus exception records
+  [ ] I can explain why time zone preservation matters
+
+Scalability:
+  [ ] I can discuss free/busy caching, reminder scheduling, and read scaling
+
+Trade-offs:
+  [ ] I can explain where consistency matters most and where staleness is acceptable
+```
