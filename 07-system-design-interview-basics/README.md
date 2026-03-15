@@ -10,10 +10,10 @@ What exists today:
 
 - [01-introduction_to_system_design_interviews.md](01-introduction_to_system_design_interviews.md) - Reader-facing introduction to the interview format
 - [02-types_of_system_design_questions.md](02-types_of_system_design_questions.md) - Practical categories and how they change your interview approach
+- [03-expectations_by_experience_level.md](03-expectations_by_experience_level.md) - How interview depth, ownership, and scope expectations change by role level
 
 Likely next chapters:
 
-- Expectations by experience level
 - Must-know concepts for system design interviews
 
 ## How This Folder Fits Into The Repo
@@ -35,3 +35,4 @@ Once this folder fills out, the documents should be short, high-signal, and inte
 
 - [01-introduction_to_system_design_interviews.md](01-introduction_to_system_design_interviews.md)
 - [02-types_of_system_design_questions.md](02-types_of_system_design_questions.md)
+- [03-expectations_by_experience_level.md](03-expectations_by_experience_level.md)
