@@ -9,7 +9,7 @@ This folder contains concept-first system design notes. Use it when you want to 
 | Security and identity | 4 | TLS, RBAC, secrets management, SAML |
 | Observability | 8 | Logs, metrics, traces, alerts, dashboards, correlation |
 | Data systems | 9 | Batch/stream processing, ETL, lakes, warehouses, lakehouse, Lambda/Kappa |
-| Platform and service patterns | 8 | Service discovery, API gateway, BFF, sidecar, circuit breaker, bulkhead, strangler fig, service mesh |
+| Platform and service patterns | 16 | Service discovery, API gateway, BFF, sidecar, circuit breaker, bulkhead, strangler fig, service mesh, client-server architecture, monolithic architecture, microservices architecture, serverless architecture, event-driven architecture, CQRS, event sourcing, peer-to-peer architecture |
 
 ## How This Folder Differs From Nearby Folders
 
@@ -59,6 +59,14 @@ This folder contains concept-first system design notes. Use it when you want to 
 6. [27-bulkhead_pattern.md](27-bulkhead_pattern.md)
 7. [28-strangler_fig_pattern.md](28-strangler_fig_pattern.md)
 8. [29-service_mesh.md](29-service_mesh.md)
+9. [30-client_server_architecture.md](30-client_server_architecture.md)
+10. [31-monolithic_architecture.md](31-monolithic_architecture.md)
+11. [32-microservices_architecture.md](32-microservices_architecture.md)
+12. [33-serverless_architecture.md](33-serverless_architecture.md)
+13. [34-event_driven_architecture.md](34-event_driven_architecture.md)
+14. [35-cqrs_command_query_responsibility_segregation.md](35-cqrs_command_query_responsibility_segregation.md)
+15. [36-event_sourcing.md](36-event_sourcing.md)
+16. [37-peer_to_peer_p2p_architecture.md](37-peer_to_peer_p2p_architecture.md)
 
 ## Full Index
 
@@ -93,3 +101,11 @@ This folder contains concept-first system design notes. Use it when you want to 
 | 27 | Bulkhead Pattern | [27-bulkhead_pattern.md](27-bulkhead_pattern.md) | Capacity isolation to prevent noisy-neighbor contention |
 | 28 | Strangler Fig Pattern | [28-strangler_fig_pattern.md](28-strangler_fig_pattern.md) | Incremental legacy replacement and modernization |
 | 29 | Service Mesh | [29-service_mesh.md](29-service_mesh.md) | Dedicated service-to-service communication layer with identity, policy, and observability |
+| 30 | Client-Server Architecture | [30-client_server_architecture.md](30-client_server_architecture.md) | Foundational request-response architecture for shared state, centralized logic, and controlled resource access |
+| 31 | Monolithic Architecture | [31-monolithic_architecture.md](31-monolithic_architecture.md) | Single deployable application boundary with in-process coordination, modular design, and controlled operational simplicity |
+| 32 | Microservices Architecture | [32-microservices_architecture.md](32-microservices_architecture.md) | Distributed application architecture built from independently deployable services with explicit contracts, bounded ownership, and decentralized data management |
+| 33 | Serverless Architecture | [33-serverless_architecture.md](33-serverless_architecture.md) | Managed, event-driven compute architecture with ephemeral execution, platform-managed scaling, and externalized state |
+| 34 | Event-Driven Architecture | [34-event_driven_architecture.md](34-event_driven_architecture.md) | Asynchronous architecture built around published events, decoupled consumers, durable delivery, and eventual consistency trade-offs |
+| 35 | CQRS (Command Query Responsibility Segregation) | [35-cqrs_command_query_responsibility_segregation.md](35-cqrs_command_query_responsibility_segregation.md) | Separated command and query responsibilities with write-side invariants, projections, and query-optimized read models |
+| 36 | Event Sourcing | [36-event_sourcing.md](36-event_sourcing.md) | Persistence model where immutable event streams are the source of truth for aggregate state, replay, and rebuildable projections |
+| 37 | Peer-to-Peer (P2P) Architecture | [37-peer_to_peer_p2p_architecture.md](37-peer_to_peer_p2p_architecture.md) | Distributed architecture where participating nodes can both consume and provide bandwidth, storage, or routing capacity |
