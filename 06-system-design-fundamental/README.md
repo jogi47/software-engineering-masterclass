@@ -8,8 +8,9 @@ This folder contains concept-first system design notes. Use it when you want to 
 | --- | --- | --- |
 | Security and identity | 4 | TLS, RBAC, secrets management, SAML |
 | Observability | 8 | Logs, metrics, traces, alerts, dashboards, correlation |
-| Data systems | 9 | Batch/stream processing, ETL, lakes, warehouses, lakehouse, Lambda/Kappa |
+| Data systems | 16 | Batch/stream processing, ETL, lakes, warehouses, lakehouse, Lambda/Kappa, spatial indexing, probabilistic counting and frequency sketches, skip lists, Merkle trees |
 | Platform and service patterns | 16 | Service discovery, API gateway, BFF, sidecar, circuit breaker, bulkhead, strangler fig, service mesh, client-server architecture, monolithic architecture, microservices architecture, serverless architecture, event-driven architecture, CQRS, event sourcing, peer-to-peer architecture |
+| Distributed coordination | 5 | Cross-service transaction failure modes, partial failure, atomic commit coordination trade-offs, compensation-based workflows, and durable asynchronous handoff |
 
 ## How This Folder Differs From Nearby Folders
 
@@ -48,6 +49,13 @@ This folder contains concept-first system design notes. Use it when you want to 
 7. [19-lambda_architecture.md](19-lambda_architecture.md)
 8. [20-kappa_architecture.md](20-kappa_architecture.md)
 9. [21-streaming_engines.md](21-streaming_engines.md)
+10. [38-geohash_explained.md](38-geohash_explained.md)
+11. [39-quad_tree.md](39-quad_tree.md)
+12. [40-r_tree.md](40-r_tree.md)
+13. [41-skip_lists.md](41-skip_lists.md)
+14. [42-merkle_trees_explained.md](42-merkle_trees_explained.md)
+15. [43-hyperloglog.md](43-hyperloglog.md)
+16. [44-count_min_sketch.md](44-count_min_sketch.md)
 
 ### Service Platform Patterns
 
@@ -67,6 +75,14 @@ This folder contains concept-first system design notes. Use it when you want to 
 14. [35-cqrs_command_query_responsibility_segregation.md](35-cqrs_command_query_responsibility_segregation.md)
 15. [36-event_sourcing.md](36-event_sourcing.md)
 16. [37-peer_to_peer_p2p_architecture.md](37-peer_to_peer_p2p_architecture.md)
+
+### Distributed Coordination
+
+1. [45-the_problem_with_distributed_transactions.md](45-the_problem_with_distributed_transactions.md)
+2. [46-two_phase_commit_2pc.md](46-two_phase_commit_2pc.md)
+3. [47-three_phase_commit_3pc.md](47-three_phase_commit_3pc.md)
+4. [48-saga_pattern.md](48-saga_pattern.md)
+5. [49-outbox_pattern.md](49-outbox_pattern.md)
 
 ## Full Index
 
@@ -109,3 +125,15 @@ This folder contains concept-first system design notes. Use it when you want to 
 | 35 | CQRS (Command Query Responsibility Segregation) | [35-cqrs_command_query_responsibility_segregation.md](35-cqrs_command_query_responsibility_segregation.md) | Separated command and query responsibilities with write-side invariants, projections, and query-optimized read models |
 | 36 | Event Sourcing | [36-event_sourcing.md](36-event_sourcing.md) | Persistence model where immutable event streams are the source of truth for aggregate state, replay, and rebuildable projections |
 | 37 | Peer-to-Peer (P2P) Architecture | [37-peer_to_peer_p2p_architecture.md](37-peer_to_peer_p2p_architecture.md) | Distributed architecture where participating nodes can both consume and provide bandwidth, storage, or routing capacity |
+| 38 | Geohash Explained | [38-geohash_explained.md](38-geohash_explained.md) | Hierarchical spatial encoding for coarse location bucketing, prefix search, and nearby-point query prefiltering |
+| 39 | Quad Tree | [39-quad_tree.md](39-quad_tree.md) | Hierarchical two-dimensional spatial partitioning for viewport queries, range search, and broad-phase candidate pruning |
+| 40 | R-Tree | [40-r_tree.md](40-r_tree.md) | Hierarchical bounding-box spatial index for overlap queries, containment candidate pruning, and spatial search over regions |
+| 41 | Skip Lists | [41-skip_lists.md](41-skip_lists.md) | Layered probabilistic ordered index for expected logarithmic lookup, updates, and efficient range scans |
+| 42 | Merkle Trees Explained | [42-merkle_trees_explained.md](42-merkle_trees_explained.md) | Hash-tree structure for compact dataset summaries, inclusion proofs, and targeted divergence detection |
+| 43 | HyperLogLog | [43-hyperloglog.md](43-hyperloglog.md) | Probabilistic cardinality sketch for approximate distinct counting with bounded memory and mergeable summaries |
+| 44 | Count-Min Sketch | [44-count_min_sketch.md](44-count_min_sketch.md) | Probabilistic frequency sketch for approximate per-key counts, bounded memory, and mergeable streaming summaries |
+| 45 | The Problem with Distributed Transactions | [45-the_problem_with_distributed_transactions.md](45-the_problem_with_distributed_transactions.md) | Why cross-service workflows lose local ACID simplicity and how partial failure, retries, and uncertain outcomes shape distributed transaction design |
+| 46 | Two-Phase Commit (2PC) | [46-two_phase_commit_2pc.md](46-two_phase_commit_2pc.md) | Classic atomic commit protocol with prepare and final decision phases, durable recovery, and blocking trade-offs under failure |
+| 47 | Three-Phase Commit (3PC) | [47-three_phase_commit_3pc.md](47-three_phase_commit_3pc.md) | Atomic commit protocol that adds a precommit buffer phase to reduce some 2PC blocking cases under stronger timing and recovery assumptions |
+| 48 | Saga Pattern | [48-saga_pattern.md](48-saga_pattern.md) | Compensation-based workflow pattern for coordinating local transactions across services with explicit failure handling, eventual consistency, and recovery paths |
+| 49 | Outbox Pattern | [49-outbox_pattern.md](49-outbox_pattern.md) | Producer-side durability pattern that commits state and publish intent together, then relays messages asynchronously with idempotent downstream handling |
