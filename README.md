@@ -13,11 +13,12 @@ This repository has expanded well beyond the original DSA-only scope. This READM
 | Design patterns | `03-design-patterns/` | 112 TypeScript examples across GoF, PoEAA, DDD, and refactoring |
 | Database internals | `04-database-basics/` | 12 DDIA chapter notes |
 | System design blueprints | `05-system-design/` | 16 end-to-end architecture documents |
-| System design fundamentals | `06-system-design-fundamental/` | 29 concept notes covering security, observability, data systems, and platform patterns |
-| System design interview basics | `07-system-design-interview-basics/` | 2 interview-prep chapters covering framing and question taxonomy |
+| System design fundamentals | `06-system-design-fundamental/` | 64 concept notes covering security, observability, data systems, architecture, and distributed systems |
+| System design interview basics | `07-system-design-interview-basics/` | 3 interview-prep chapters covering framing, question taxonomy, and expectations by level |
 | System design interview case studies | `08-system-design-interview/` | 2 interview-style design problems |
 | Low-level design interview basics | `09-low-level-design-interview-basics/` | 2 foundational LLD prep notes |
 | Low-level design interview case studies | `10-low-level-design-interview/` | 3 LLD case studies, with runnable TypeScript where applicable |
+| Claude architect certification prep | `11-claude-architect/` | 9 certification-prep notes covering the exam guide plus Domain 1 and Domain 2 topics |
 | Scratchpad | `practice/` | Local experimentation area |
 
 ## Repository Map
@@ -43,6 +44,7 @@ software-engineering-masterclass/
 ├── 08-system-design-interview/
 ├── 09-low-level-design-interview-basics/
 ├── 10-low-level-design-interview/
+├── 11-claude-architect/
 └── practice/
 ```
 
@@ -60,7 +62,8 @@ These reader-facing folder indexes are maintained in top-level folder order:
 8. [08-system-design-interview/README.md](08-system-design-interview/README.md)
 9. [09-low-level-design-interview-basics/README.md](09-low-level-design-interview-basics/README.md)
 10. [10-low-level-design-interview/README.md](10-low-level-design-interview/README.md)
-11. [practice/README.md](practice/README.md)
+11. [11-claude-architect/README.md](11-claude-architect/README.md)
+12. [practice/README.md](practice/README.md)
 
 ## Table of Contents
 
@@ -79,6 +82,7 @@ These reader-facing folder indexes are maintained in top-level folder order:
   - [System Design Interview Index](#system-design-interview-index)
   - [Low-Level Design Interview Basics Index](#low-level-design-interview-basics-index)
   - [Low-Level Design Interview Index](#low-level-design-interview-index)
+  - [Claude Architect Foundations Index](#claude-architect-foundations-index)
 - [Getting Started](#getting-started)
 - [Project Conventions](#project-conventions)
 - [Where To Start](#where-to-start)
@@ -139,6 +143,14 @@ Representative files:
   - [02-design-notification-system.md](10-low-level-design-interview/02-design-notification-system.md)
   - [03-design-search-autocomplete.md](10-low-level-design-interview/03-design-search-autocomplete.md)
   - [03-design-search-autocomplete.ts](10-low-level-design-interview/03-design-search-autocomplete.ts)
+
+### Claude Architect Foundations
+
+- `11-claude-architect/` contains certification-prep material for the Claude Certified Architect Foundations track:
+  - [claude-certified-architect-foundations-certification-exam-guide.md](11-claude-architect/claude-certified-architect-foundations-certification-exam-guide.md)
+  - [topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md](11-claude-architect/topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md)
+  - [topic-1.2-orchestrate-multi-agent-systems-with-coordinator-subagent-patterns.md](11-claude-architect/topic-1.2-orchestrate-multi-agent-systems-with-coordinator-subagent-patterns.md)
+  - [topic-1.3-configure-subagent-invocation-context-passing-and-spawning.md](11-claude-architect/topic-1.3-configure-subagent-invocation-context-passing-and-spawning.md)
 
 ## Master Index
 
@@ -487,11 +499,47 @@ Representative files:
 - [27-bulkhead_pattern.md](06-system-design-fundamental/27-bulkhead_pattern.md)
 - [28-strangler_fig_pattern.md](06-system-design-fundamental/28-strangler_fig_pattern.md)
 - [29-service_mesh.md](06-system-design-fundamental/29-service_mesh.md)
+- [30-client_server_architecture.md](06-system-design-fundamental/30-client_server_architecture.md)
+- [31-monolithic_architecture.md](06-system-design-fundamental/31-monolithic_architecture.md)
+- [32-microservices_architecture.md](06-system-design-fundamental/32-microservices_architecture.md)
+- [33-serverless_architecture.md](06-system-design-fundamental/33-serverless_architecture.md)
+- [34-event_driven_architecture.md](06-system-design-fundamental/34-event_driven_architecture.md)
+- [35-cqrs_command_query_responsibility_segregation.md](06-system-design-fundamental/35-cqrs_command_query_responsibility_segregation.md)
+- [36-event_sourcing.md](06-system-design-fundamental/36-event_sourcing.md)
+- [37-peer_to_peer_p2p_architecture.md](06-system-design-fundamental/37-peer_to_peer_p2p_architecture.md)
+- [38-geohash_explained.md](06-system-design-fundamental/38-geohash_explained.md)
+- [39-quad_tree.md](06-system-design-fundamental/39-quad_tree.md)
+- [40-r_tree.md](06-system-design-fundamental/40-r_tree.md)
+- [41-skip_lists.md](06-system-design-fundamental/41-skip_lists.md)
+- [42-merkle_trees_explained.md](06-system-design-fundamental/42-merkle_trees_explained.md)
+- [43-hyperloglog.md](06-system-design-fundamental/43-hyperloglog.md)
+- [44-count_min_sketch.md](06-system-design-fundamental/44-count_min_sketch.md)
+- [45-the_problem_with_distributed_transactions.md](06-system-design-fundamental/45-the_problem_with_distributed_transactions.md)
+- [46-two_phase_commit_2pc.md](06-system-design-fundamental/46-two_phase_commit_2pc.md)
+- [47-three_phase_commit_3pc.md](06-system-design-fundamental/47-three_phase_commit_3pc.md)
+- [48-saga_pattern.md](06-system-design-fundamental/48-saga_pattern.md)
+- [49-outbox_pattern.md](06-system-design-fundamental/49-outbox_pattern.md)
+- [50-challenges_of_distribution.md](06-system-design-fundamental/50-challenges_of_distribution.md)
+- [51-network_partitions.md](06-system-design-fundamental/51-network_partitions.md)
+- [52-split_brain_problem.md](06-system-design-fundamental/52-split_brain_problem.md)
+- [53-heartbeats.md](06-system-design-fundamental/53-heartbeats.md)
+- [54-handling_failures_in_distributed_systems.md](06-system-design-fundamental/54-handling_failures_in_distributed_systems.md)
+- [55-the_clock_synchronization_problem.md](06-system-design-fundamental/55-the_clock_synchronization_problem.md)
+- [56-logical_clocks.md](06-system-design-fundamental/56-logical_clocks.md)
+- [57-lamport_timestamps.md](06-system-design-fundamental/57-lamport_timestamps.md)
+- [58-vector_clocks.md](06-system-design-fundamental/58-vector_clocks.md)
+- [59-consensus_algorithms_overview.md](06-system-design-fundamental/59-consensus_algorithms_overview.md)
+- [60-paxos_algorithm.md](06-system-design-fundamental/60-paxos_algorithm.md)
+- [61-raft_algorithm.md](06-system-design-fundamental/61-raft_algorithm.md)
+- [62-leader_election.md](06-system-design-fundamental/62-leader_election.md)
+- [63-gossip_protocol.md](06-system-design-fundamental/63-gossip_protocol.md)
+- [64-vertical_vs_horizontal_scaling.md](06-system-design-fundamental/64-vertical_vs_horizontal_scaling.md)
 
 ### System Design Interview Basics Index
 
 - [01-introduction_to_system_design_interviews.md](07-system-design-interview-basics/01-introduction_to_system_design_interviews.md)
 - [02-types_of_system_design_questions.md](07-system-design-interview-basics/02-types_of_system_design_questions.md)
+- [03-expectations_by_experience_level.md](07-system-design-interview-basics/03-expectations_by_experience_level.md)
 
 ### System Design Interview Index
 
@@ -509,6 +557,18 @@ Representative files:
 - [02-design-notification-system.md](10-low-level-design-interview/02-design-notification-system.md)
 - [03-design-search-autocomplete.md](10-low-level-design-interview/03-design-search-autocomplete.md)
 - [03-design-search-autocomplete.ts](10-low-level-design-interview/03-design-search-autocomplete.ts)
+
+### Claude Architect Foundations Index
+
+- [claude-certified-architect-foundations-certification-exam-guide.md](11-claude-architect/claude-certified-architect-foundations-certification-exam-guide.md)
+- [topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md](11-claude-architect/topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md)
+- [topic-1.2-orchestrate-multi-agent-systems-with-coordinator-subagent-patterns.md](11-claude-architect/topic-1.2-orchestrate-multi-agent-systems-with-coordinator-subagent-patterns.md)
+- [topic-1.3-configure-subagent-invocation-context-passing-and-spawning.md](11-claude-architect/topic-1.3-configure-subagent-invocation-context-passing-and-spawning.md)
+- [topic-1.4-implement-multi-step-workflows-with-enforcement-and-handoff-patterns.md](11-claude-architect/topic-1.4-implement-multi-step-workflows-with-enforcement-and-handoff-patterns.md)
+- [topic-1.5-apply-agent-sdk-hooks-for-tool-call-interception-and-data-normalization.md](11-claude-architect/topic-1.5-apply-agent-sdk-hooks-for-tool-call-interception-and-data-normalization.md)
+- [topic-1.6-design-task-decomposition-strategies-for-complex-workflows.md](11-claude-architect/topic-1.6-design-task-decomposition-strategies-for-complex-workflows.md)
+- [topic-1.7-manage-session-state-resumption-and-forking.md](11-claude-architect/topic-1.7-manage-session-state-resumption-and-forking.md)
+- [topic-2.1-design-effective-tool-interfaces-with-clear-descriptions-and-boundaries.md](11-claude-architect/topic-2.1-design-effective-tool-interfaces-with-clear-descriptions-and-boundaries.md)
 
 ## Getting Started
 
@@ -543,6 +603,7 @@ npx tsc --noEmit
 - TypeScript is configured with `strict: true`, `target: ES2020`, and `module: CommonJS`
 - DSA files use 3-digit numeric prefixes such as `001-two-sum.ts`
 - Design pattern and project documents use 2-digit prefixes such as `01-factory-method.ts` and `01-todo-app.md`
+- `11-claude-architect/` topic notes use `topic-<domain>.<task>-<slug>.md`
 - Most Markdown folders use ASCII diagrams and structured sections instead of loose notes
 
 ## Where To Start
@@ -551,3 +612,4 @@ npx tsc --noEmit
 - If you want reusable engineering patterns, start with [03-design-patterns](03-design-patterns/)
 - If you want architecture depth, read [06-system-design-fundamental](06-system-design-fundamental/) before jumping into [05-system-design](05-system-design/)
 - If you are preparing for interviews, use `07` through `10` in order from basics to case studies
+- If you want Claude certification prep, start with [11-claude-architect](11-claude-architect/) and begin with the exam guide

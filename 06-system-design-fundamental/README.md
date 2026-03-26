@@ -8,9 +8,10 @@ This folder contains concept-first system design notes. Use it when you want to 
 | --- | --- | --- |
 | Security and identity | 4 | TLS, RBAC, secrets management, SAML |
 | Observability | 8 | Logs, metrics, traces, alerts, dashboards, correlation |
+| Scalability foundations | 1 | Vertical vs horizontal scaling trade-offs, stateful vs stateless scaling constraints, and layer-by-layer growth planning |
 | Data systems | 16 | Batch/stream processing, ETL, lakes, warehouses, lakehouse, Lambda/Kappa, spatial indexing, probabilistic counting and frequency sketches, skip lists, Merkle trees |
 | Platform and service patterns | 16 | Service discovery, API gateway, BFF, sidecar, circuit breaker, bulkhead, strangler fig, service mesh, client-server architecture, monolithic architecture, microservices architecture, serverless architecture, event-driven architecture, CQRS, event sourcing, peer-to-peer architecture |
-| Distributed coordination | 5 | Cross-service transaction failure modes, partial failure, atomic commit coordination trade-offs, compensation-based workflows, and durable asynchronous handoff |
+| Distributed systems failure and coordination | 19 | Core distributed-systems constraints, clock uncertainty, causal ordering with logical clocks, Lamport timestamps, vector clocks, leader-election trade-offs, consensus-backed coordination, Paxos and Raft mechanics, failure-handling strategy, heartbeat-based failure suspicion, gossip-based membership dissemination, network partitions, split-brain risk, cross-service transaction trade-offs, atomic commit coordination, compensation-based workflows, and durable asynchronous handoff |
 
 ## How This Folder Differs From Nearby Folders
 
@@ -37,6 +38,10 @@ This folder contains concept-first system design notes. Use it when you want to 
 6. [10-alert_monitoring.md](10-alert_monitoring.md)
 7. [11-dashboards_runbooks.md](11-dashboards_runbooks.md)
 8. [12-distributed_tracing.md](12-distributed_tracing.md)
+
+### Scalability Foundations
+
+1. [64-vertical_vs_horizontal_scaling.md](64-vertical_vs_horizontal_scaling.md)
 
 ### Data Platform Foundations
 
@@ -76,13 +81,27 @@ This folder contains concept-first system design notes. Use it when you want to 
 15. [36-event_sourcing.md](36-event_sourcing.md)
 16. [37-peer_to_peer_p2p_architecture.md](37-peer_to_peer_p2p_architecture.md)
 
-### Distributed Coordination
+### Distributed Systems Failure and Coordination
 
-1. [45-the_problem_with_distributed_transactions.md](45-the_problem_with_distributed_transactions.md)
-2. [46-two_phase_commit_2pc.md](46-two_phase_commit_2pc.md)
-3. [47-three_phase_commit_3pc.md](47-three_phase_commit_3pc.md)
-4. [48-saga_pattern.md](48-saga_pattern.md)
-5. [49-outbox_pattern.md](49-outbox_pattern.md)
+1. [50-challenges_of_distribution.md](50-challenges_of_distribution.md)
+2. [55-the_clock_synchronization_problem.md](55-the_clock_synchronization_problem.md)
+3. [56-logical_clocks.md](56-logical_clocks.md)
+4. [57-lamport_timestamps.md](57-lamport_timestamps.md)
+5. [58-vector_clocks.md](58-vector_clocks.md)
+6. [54-handling_failures_in_distributed_systems.md](54-handling_failures_in_distributed_systems.md)
+7. [53-heartbeats.md](53-heartbeats.md)
+8. [63-gossip_protocol.md](63-gossip_protocol.md)
+9. [51-network_partitions.md](51-network_partitions.md)
+10. [52-split_brain_problem.md](52-split_brain_problem.md)
+11. [59-consensus_algorithms_overview.md](59-consensus_algorithms_overview.md)
+12. [60-paxos_algorithm.md](60-paxos_algorithm.md)
+13. [61-raft_algorithm.md](61-raft_algorithm.md)
+14. [62-leader_election.md](62-leader_election.md)
+15. [45-the_problem_with_distributed_transactions.md](45-the_problem_with_distributed_transactions.md)
+16. [46-two_phase_commit_2pc.md](46-two_phase_commit_2pc.md)
+17. [47-three_phase_commit_3pc.md](47-three_phase_commit_3pc.md)
+18. [48-saga_pattern.md](48-saga_pattern.md)
+19. [49-outbox_pattern.md](49-outbox_pattern.md)
 
 ## Full Index
 
@@ -137,3 +156,18 @@ This folder contains concept-first system design notes. Use it when you want to 
 | 47 | Three-Phase Commit (3PC) | [47-three_phase_commit_3pc.md](47-three_phase_commit_3pc.md) | Atomic commit protocol that adds a precommit buffer phase to reduce some 2PC blocking cases under stronger timing and recovery assumptions |
 | 48 | Saga Pattern | [48-saga_pattern.md](48-saga_pattern.md) | Compensation-based workflow pattern for coordinating local transactions across services with explicit failure handling, eventual consistency, and recovery paths |
 | 49 | Outbox Pattern | [49-outbox_pattern.md](49-outbox_pattern.md) | Producer-side durability pattern that commits state and publish intent together, then relays messages asynchronously with idempotent downstream handling |
+| 50 | Challenges of Distribution | [50-challenges_of_distribution.md](50-challenges_of_distribution.md) | Foundational distributed-systems constraints including partial failure, unreliable delivery, clock skew, tail latency, fragmented state, partitions, and practical application guardrails |
+| 51 | Network Partitions | [51-network_partitions.md](51-network_partitions.md) | Communication failures that isolate nodes or clients into separate segments, forcing explicit decisions about consistency, availability, leadership, and recovery |
+| 52 | Split Brain Problem | [52-split_brain_problem.md](52-split_brain_problem.md) | Authority failure mode where multiple nodes or segments act as leader concurrently, requiring quorum, fencing, and careful reconciliation to avoid conflicting writes |
+| 53 | Heartbeats | [53-heartbeats.md](53-heartbeats.md) | Periodic liveness signals for failure suspicion, membership tracking, lease renewal, and safer recovery decisions under distributed uncertainty |
+| 54 | Handling Failures in Distributed Systems | [54-handling_failures_in_distributed_systems.md](54-handling_failures_in_distributed_systems.md) | Failure-handling discipline for distributed workflows including timeout strategy, safe retries, idempotency, degradation, recovery, and reconciliation |
+| 55 | The Clock Synchronization Problem | [55-the_clock_synchronization_problem.md](55-the_clock_synchronization_problem.md) | Physical clock drift, synchronization uncertainty, wall-clock versus monotonic time, and practical guardrails for time-dependent distributed-system design |
+| 56 | Logical Clocks | [56-logical_clocks.md](56-logical_clocks.md) | Causal ordering model for distributed events, happens-before reasoning, concurrency detection trade-offs, and practical clock choices such as Lamport and vector-style timestamps |
+| 57 | Lamport Timestamps | [57-lamport_timestamps.md](57-lamport_timestamps.md) | Scalar logical-clock algorithm for preserving message-derived causal order, deterministic tie-breaking, and compact ordering metadata in distributed systems |
+| 58 | Vector Clocks | [58-vector_clocks.md](58-vector_clocks.md) | Multi-writer causal metadata for distinguishing version dominance from true concurrency in replicated systems and offline synchronization |
+| 59 | Consensus Algorithms Overview | [59-consensus_algorithms_overview.md](59-consensus_algorithms_overview.md) | Overview of crash-fault and Byzantine consensus families, quorum and term mechanics, replicated-log coordination, and where consensus-backed authority fits in distributed systems |
+| 60 | Paxos Algorithm | [60-paxos_algorithm.md](60-paxos_algorithm.md) | Single-value crash-fault consensus protocol built on ballots, quorum intersection, prepare/accept phases, and the Multi-Paxos path toward replicated logs |
+| 61 | Raft Algorithm | [61-raft_algorithm.md](61-raft_algorithm.md) | Leader-centric crash-fault consensus protocol for replicated logs, quorum-backed elections, commit rules, membership changes, snapshots, and safe client interaction |
+| 62 | Leader Election | [62-leader_election.md](62-leader_election.md) | Authority-selection pattern for choosing one active coordinator per scope or epoch, handling failover conservatively, and protecting downstream systems with leases and fencing |
+| 63 | Gossip Protocol | [63-gossip_protocol.md](63-gossip_protocol.md) | Decentralized dissemination pattern for spreading membership, liveness hints, and lightweight cluster metadata through repeated peer-to-peer exchange and eventual convergence |
+| 64 | Vertical vs Horizontal Scaling | [64-vertical_vs_horizontal_scaling.md](64-vertical_vs_horizontal_scaling.md) | Capacity-growth trade-offs between scaling up and scaling out across application, worker, cache, and data tiers |
