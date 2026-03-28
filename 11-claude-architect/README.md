@@ -4,7 +4,7 @@ This folder contains study material for the Claude Certified Architect Foundatio
 
 ## Current Coverage
 
-The current note set covers Domain 1 in full, the first five Domain 2 tool-integration notes, and the opening six Domain 3 Claude Code workflow notes:
+The current note set covers Domain 1 in full, the first five Domain 2 tool-integration notes, the opening six Domain 3 Claude Code workflow notes, the first six Domain 4 prompt-engineering and structured-output notes, and the opening four Domain 5 context-management, escalation, error-propagation, and large-codebase-exploration notes:
 
 - [claude-certified-architect-foundations-certification-exam-guide.md](claude-certified-architect-foundations-certification-exam-guide.md) - Full study guide with domains, scenarios, sample questions, and preparation advice
 - [topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md](topic-1.1-design-and-implement-agentic-loops-for-autonomous-task-execution.md) - Agent loop control, `stop_reason`, and tool-result feedback
@@ -25,6 +25,16 @@ The current note set covers Domain 1 in full, the first five Domain 2 tool-integ
 - [topic-3.4-determine-when-to-use-plan-mode-vs-direct-execution.md](topic-3.4-determine-when-to-use-plan-mode-vs-direct-execution.md) - Plan mode versus execution-oriented workflows, current permission-mode terminology, investigation subagents, and when to plan first versus implement immediately
 - [topic-3.5-apply-iterative-refinement-techniques-for-progressive-improvement.md](topic-3.5-apply-iterative-refinement-techniques-for-progressive-improvement.md) - Iterative refinement through concrete examples, executable verification, interview-style clarification, and the judgment to batch interacting issues while separating independent ones
 - [topic-3.6-integrate-claude-code-into-ci-cd-pipelines.md](topic-3.6-integrate-claude-code-into-ci-cd-pipelines.md) - Headless CI execution, structured automation output, `CLAUDE.md` as shared pipeline context, independent review runs, deduplicated re-reviews, and higher-value test generation
+- [topic-4.1-design-prompts-with-explicit-criteria-to-improve-precision-and-reduce-false-positives.md](topic-4.1-design-prompts-with-explicit-criteria-to-improve-precision-and-reduce-false-positives.md) - Explicit review criteria, trust-preserving scope control, severity rubrics, and prompt patterns for reducing noisy CI findings
+- [topic-4.2-apply-few-shot-prompting-to-improve-output-consistency-and-quality.md](topic-4.2-apply-few-shot-prompting-to-improve-output-consistency-and-quality.md) - Few-shot prompting for ambiguous-case handling, output-shape stability, acceptable-versus-reportable boundary teaching, and varied-format extraction reliability
+- [topic-4.3-enforce-structured-output-using-tool-use-and-json-schemas.md](topic-4.3-enforce-structured-output-using-tool-use-and-json-schemas.md) - Tool-use and structured-output guarantees, `tool_choice` trade-offs, schema design for abstention, and the boundary between schema validity and semantic correctness
+- [topic-4.4-implement-validation-retry-and-feedback-loops-for-extraction-quality.md](topic-4.4-implement-validation-retry-and-feedback-loops-for-extraction-quality.md) - Semantic validation, retry-with-error-feedback, source-missing versus fixable failures, and pattern-tracking loops for extraction quality improvement
+- [topic-4.5-design-efficient-batch-processing-strategies.md](topic-4.5-design-efficient-batch-processing-strategies.md) - Message Batches API fit, SLA-aware submission cadence, `custom_id` correlation, and selective retry strategies for large async workloads
+- [topic-4.6-design-multi-instance-and-multi-pass-review-architectures.md](topic-4.6-design-multi-instance-and-multi-pass-review-architectures.md) - Independent review runs, per-file and integration review passes, verification stages, and confidence-aware routing for higher-trust code review
+- [topic-5.1-manage-conversation-context-to-preserve-critical-information-across-long-interactions.md](topic-5.1-manage-conversation-context-to-preserve-critical-information-across-long-interactions.md) - Context fidelity across long interactions, persistent fact blocks, structured issue state, and current Anthropic context-engineering terminology
+- [topic-5.2-design-effective-escalation-and-ambiguity-resolution-patterns.md](topic-5.2-design-effective-escalation-and-ambiguity-resolution-patterns.md) - Resolve versus clarify versus escalate boundaries, explicit human-request handling, policy-gap escalation, and current Anthropic clarification workflow terminology
+- [topic-5.3-implement-error-propagation-strategies-across-multi-agent-systems.md](topic-5.3-implement-error-propagation-strategies-across-multi-agent-systems.md) - Structured subagent failure propagation, partial-progress preservation, coordinator recovery logic, and current `Task` versus `Agent` terminology mapping
+- [topic-5.4-manage-context-effectively-in-large-codebase-exploration.md](topic-5.4-manage-context-effectively-in-large-codebase-exploration.md) - Scratchpads, subagent-scoped exploration, phase summaries, compaction timing, and structured resume manifests for long codebase investigations
 
 ## How To Use This Folder
 
@@ -34,4 +44,4 @@ The current note set covers Domain 1 in full, the first five Domain 2 tool-integ
 
 ## What Comes Next
 
-The current material is strongest on Domain 1, covers the early part of Domain 2 through Topic 2.5, and now extends Domain 3 through Topic 3.6. Future notes can extend the same format through the rest of Domain 3 and then into Domains 4 and 5 while keeping the exam guide and topic index aligned.
+The current material is strongest on Domain 1, covers the early part of Domain 2 through Topic 2.5, extends Domain 3 through Topic 3.6, carries Domain 4 through Topic 4.6, and now extends Domain 5 through Topic 5.4. Future notes can extend the same format through the rest of Domain 5 while keeping the exam guide and topic index aligned.
